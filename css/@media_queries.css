@@ -1,0 +1,42 @@
+/* Desktop */
+@media (min-width: 1200px) {
+  /* Your desktop styles here */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+}
+
+/* Laptop */
+@media (min-width: 992px) and (max-width: 1199px) {
+  /* Your laptop styles here */
+  .responsive-image {
+    width: 100%;
+  }
+}
+
+/* iPad */
+@media (min-width: 768px) and (max-width: 991px) {
+  /* Your iPad styles here */
+  .responsive-image {
+    width: 100%;
+  }
+}
+
+/* Large iPhone */
+@media (min-width: 414px) and (max-width: 767px) {
+  /* Your large iPhone styles here */
+  .responsive-image {
+    width: 100%;
+  }
+}
+
+/* Small iPhone */
+@media (max-width: 413px) {
+  /* Your small iPhone styles here */
+  .responsive-image {
+    width: 100%;
+  }
+}
