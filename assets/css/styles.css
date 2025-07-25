@@ -1,0 +1,117 @@
+/* Navbar Transition Styles */
+.navbar {
+  transition: all 0.3s ease-in-out;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #f7f4f33f;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.navbar.mask-custom {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.navbar.mask-custom:hover {
+  background-color: #f8f9fa;
+  box-shadow: 0 0.8rem 1rem rgba(0, 0, 0, 0.021);
+}
+
+.navbar-scroll .nav-link,
+.navbar-scroll .navbar-toggler-icon,
+.navbar-scroll .navbar-brand {
+  color: #fff;
+}
+
+.navbar-scrolled .nav-link,
+.navbar-scrolled .navbar-toggler-icon,
+.navbar-scrolled .navbar-brand {
+  color: #ffffff44;
+}
+
+.navbar-scroll,
+.navbar-scrolled {
+  background-color: #f7f4f33f;
+}
+
+.mask-custom {
+  border: 3px solid #000;
+  backdrop-filter: blur(6px);
+  background-color: rgba(182, 181, 181, 0.096);
+}
+
+.mask-custom-2 {
+  backdrop-filter: blur(3px);
+  background-color: rgba(116, 115, 115, 0.075);
+}
+
+.navbar-brand {
+  font-size: 2.75rem;
+  letter-spacing: 3px;
+}
+
+/* Enhanced navbar scrolled state with better contrast */
+.navbar-scrolled {
+  background-color: rgba(248, 249, 250, 0.95) !important;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-scrolled .nav-link {
+  color: #333 !important;
+}
+
+.navbar-scrolled .navbar-brand {
+  color: #333 !important;
+}
+
+.navbar-scrolled .navbar-toggler-icon {
+  filter: invert(1);
+}
+
+/* Smooth transition for all navbar elements */
+.navbar,
+.navbar .nav-link,
+.navbar .navbar-brand,
+.navbar .navbar-toggler-icon {
+  transition: all 0.3s ease-in-out;
+}
+
+/* Base styles for body and layout */
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+header {
+  border: 1px solid black;
+  position: relative;
+  top: 10;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  min-height: 100px;
+  padding: 10px 0;
+}

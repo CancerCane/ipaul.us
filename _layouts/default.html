@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title>{% if page.title %}{{ page.title }} - {% endif %}IPaul Media and Electronics</title>
+    <link rel="icon" href="{{ '/assets/img/icon3.png' | relative_url }}" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+    />
+    <link rel="stylesheet" href="{{ '/assets/css/mdb.dark.min.css' | relative_url }}" />
+    <link rel="stylesheet" href="{{ '/assets/css/flip.css' | relative_url }}" />
+    <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}" />
+  </head>
+
+  <body>
+    <header>
+      {% include navbar.html %}
+    </header>
+
+    {{ content }}
+
+    <footer></footer>
+
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+      integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script src="{{ '/assets/js/navbar.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/index.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/mdb.umd.min.js' | relative_url }}"></script>
+  </body>
+</html>

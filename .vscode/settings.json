@@ -1,0 +1,25 @@
+{
+    "livePreview.defaultPreviewPath": "/public/index.html",
+    "git.ignoreLimitWarning": true,
+    "emmet.includeLanguages": {
+        "javascript": "javascript",
+        "javascriptreact": "javascript",
+        "typescript": "javascript",
+        "typescriptreact": "javascript",
+        "vue": "html",
+        "html": "html",
+        "css": "css",
+        "scss": "css",
+        "sass": "css",
+        "less": "css"
+    },
+    "open-default-browser": true,
+    "emmet.triggerExpansionOnTab": true,
+    "css.format.enable": true,
+    "css.validate": false,
+    "html.format.enable": true,
+    "html.validate": false,
+    "javascript.format.enable": true,
+    "javascript.validate": false,
+    "html.suggest.html5": true
+}

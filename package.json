@@ -1,0 +1,23 @@
+{
+  "name": "ipaul-media-system",
+  "version": "1.2.2",
+  "homepage": "https://ipaulmedia.com",
+  "license": "SEE LICENSE IN <License.txt>",
+  "devDependencies": {
+    "vite": "^5.2.11"
+  },
+  "description": "Website template for the iPaul Media",
+  "main": "index.html",
+  "dependencies": {
+    "esbuild": "^0.20.2",
+    "nanoid": "^3.3.7",
+    "picocolors": "^1.0.0",
+    "postcss": "^8.4.38",
+    "rollup": "^4.17.2",
+    "source-map-js": "^1.2.0"
+  },
+  "scripts": {
+    "test": "start"
+  },
+  "author": "Design Department, iPaul Media"
+}
