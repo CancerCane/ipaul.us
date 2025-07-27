@@ -3,41 +3,38 @@ layout: default
 title: Home
 ---
 
-<div id="landing" class="video-container text-center">
-  <!-- <video autoplay muted loop playsinline>
-    <source src="{{ '/assets/img/cblpx.mp4' | relative_url }}" type="video/mp4" /> -->
-  <div class="mask" style="background-color: transparent">
-    <div class="d-flex justify-content-center align-items-center h-100">
-      <div class="text-center text-white mask-custom">
-        <h1 class="mb-3 text-xl-center">
-          ***** Media.
-          <br />
-          <p style="text-align: center">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Adipisci tempore quis vel culpa!
-          </p>
-          <span style="color: #d6f10496"
-            >a Web media design and electronics company.</span
-          >
+<!-- Hero Section -->
+<section id="hero" class="hero-section">
+  <div class="hero-container">
+    <div class="hero-content">
+      <div class="text-center text-white hero-text">
+        <h1 class="hero-title">
+          iPaul Media.
         </h1>
-        <h4 class="mb-3">We doing business at the speed of life.</h4>
-        <span
-          ><a class="btn btn-outline-light btn-lg" href="#!" role="button"
-            >Contact</a
-          ></span
-        >
+        <p class="hero-description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Adipisci tempore quis vel culpa!
+        </p>
+        <p class="hero-tagline">
+          a Web media design and electronics company.
+        </p>
+        <h4 class="hero-subtitle">We doing business at the speed of life.</h4>
+        <a class="btn btn-outline-light btn-lg hero-cta" href="#services" role="button">
+          View Our Services
+        </a>
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<!--     <hr class="divider mask-custom" /> -->
-<!-- <main></main> -->
-
-<main id="landing" class="text-center">
-  <h1 class="text-center">Our Services</h1>
-  <!-- Service cards go here -->
-  <div class="grid-container">
+<!-- Services Section -->
+<section id="services" class="services-section">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h1 class="services-title">Our Services</h1>
+    </div>
+    <!-- Service cards go here -->
+    <div class="grid-container">
     <div class="grid-item">
       <h3 class="flip-box-header">Business Services</h3>
       <p>A virtual smorgusburg of business services. Handpicked startups</p>
@@ -123,6 +120,4 @@ title: Home
       </div>
     </div>
   </div>
-</main>
-
-<!--     <hr class="divider mask-custom" /> -->
+</section>

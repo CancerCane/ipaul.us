@@ -7,7 +7,7 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>{% if page.title %}{{ page.title }} - {% endif %}IPaul Media and Electronics</title>
+    <title>{% if page.title %}{{ page.title }} - {% endif %}IPaul Media and Creations</title>
     <link rel="icon" href="{{ '/assets/img/icon3.png' | relative_url }}" type="image/x-icon" />
     <link
       rel="stylesheet"
@@ -29,7 +29,7 @@
 
     {{ content }}
 
-    <footer></footer>
+    {% include footer.html %}
 
     <script
       src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"

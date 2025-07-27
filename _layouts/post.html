@@ -1,0 +1,90 @@
+---
+layout: default
+---
+
+<article class="post">
+  <header class="post-header">
+    <div class="container">
+      <h1 class="post-title">{{ page.title }}</h1>
+      <p class="post-meta">
+        <time datetime="{{ page.date | date_to_xmlschema }}">
+          {{ page.date | date: "%B %d, %Y" }}
+        </time>
+        {% if page.author %} • {{ page.author }}{% endif %}
+        {% if page.categories %} • {{ page.categories | join: ', ' }}{% endif %}
+      </p>
+      {% if page.featured_image %}
+        <img src="{{ page.featured_image | relative_url }}" alt="{{ page.title }}" class="post-featured-image">
+      {% endif %}
+    </div>
+  </header>
+
+  <div class="post-content">
+    <div class="container">
+      {{ content }}
+    </div>
+  </div>
+</article>
+
+<style>
+.post-header {
+  background-color: #abf0b1;
+  padding: 4rem 0 2rem;
+  margin-top: 60px;
+  z-index: auto;
+  position: static;
+}
+
+.post-header h1 {
+  font-size: 3rem;
+}
+
+.post-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.post-meta {
+  color: #666;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.post-featured-image {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.post-content {
+  padding: 3rem 0;
+  line-height: 1.8;
+}
+
+.post-content h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.post-content h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.8rem;
+  color: #444;
+}
+
+.post-content p {
+  margin-bottom: 1.2rem;
+}
+
+.post-content img {
+  max-width: 100%;
+  height: auto;
+  margin: 1.5rem 0;
+  border-radius: 4px;
+}
+</style>

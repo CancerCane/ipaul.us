@@ -20,14 +20,15 @@
 }
 
 /* Update grid-container for responsiveness */
-/* .grid-container {
+.grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 2fr));
-    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 30px;
     justify-content: space-around;
     padding: 35px 15px;
     max-width: 1200px;
-} */
+    margin: 0 auto;
+}
 
 /* Media query for larger screens */
 @media screen and (min-width: 1380px) {
@@ -79,7 +80,6 @@
   position: relative;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  width: 415px;
   margin-bottom: 35px;
   max-width: 100%;
 }
