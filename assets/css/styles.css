@@ -24,13 +24,15 @@
 .navbar-scroll .nav-link,
 .navbar-scroll .navbar-toggler-icon,
 .navbar-scroll .navbar-brand {
-  color: #333; /* Improved contrast for better visibility */
+  color: #333;
+  /* Improved contrast for better visibility */
 }
 
 .navbar-scrolled .nav-link,
 .navbar-scrolled .navbar-toggler-icon,
 .navbar-scrolled .navbar-brand {
-  color: #333; /* Improved contrast for better visibility */
+  color: #333;
+  /* Improved contrast for better visibility */
 }
 
 .navbar-scroll,
@@ -115,13 +117,13 @@
     font-size: 1.8rem;
     letter-spacing: 2px;
   }
-  
+
   .navbar-toggler {
     margin-left: auto;
     background-color: rgba(255, 255, 255, 0.2);
     border: 1px solid rgba(0, 0, 0, 0.1);
   }
-  
+
   .navbar-collapse {
     background-color: rgba(248, 249, 250, 0.98);
     margin-top: 10px;
@@ -129,18 +131,18 @@
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
-  
+
   .navbar-nav .nav-link {
     color: #333 !important;
     padding: 10px 0;
     font-weight: 500;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }
-  
+
   .navbar-nav .nav-link:last-child {
     border-bottom: none;
   }
-  
+
   .navbar-nav .nav-link:hover {
     background-color: rgba(0, 0, 0, 0.05);
     padding-left: 10px;
@@ -186,7 +188,7 @@ main {
   z-index: 1;
   /* Add overlay for better text readability */
   background-blend-mode: overlay;
-  background-color: rgba(102, 126, 234, 0.7);
+  background-color: rgba(53, 56, 246, 0.919);
 }
 
 .hero-container {
