@@ -36,8 +36,9 @@ title: Home
     <!-- Service cards go here -->
     <div class="grid-container">
     <div class="grid-item">
-      <h3 class="flip-box-header">Business Services</h3>
-      <p>A virtual smorgusburg of business services. Handpicked startups</p>
+      <h3 class="flip-box-header">Development Consulting<a href="#footnotes" aria-describedby="footnote-label" id="footnotes-ref">[1]</a></h3>
+      <p>Personalized business development. Branding, Web presence, Start-up funding, and more</p>
+      
       <div class="flip-box">
         <div
           class="flip-box-front text-center"

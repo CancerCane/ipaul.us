@@ -24,7 +24,7 @@
 .navbar-scroll .nav-link,
 .navbar-scroll .navbar-toggler-icon,
 .navbar-scroll .navbar-brand {
-  color: #333;
+  color: #fff;
   /* Improved contrast for better visibility */
 }
 
@@ -67,17 +67,17 @@
 
 /* Enhanced navbar scrolled state with better contrast */
 .navbar-scrolled {
-  background-color: rgba(248, 249, 250, 0.95) !important;
+  background-color: rgba(0, 0, 64, 0.8) !important;
   backdrop-filter: blur(10px);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-scrolled .nav-link {
-  color: #333 !important;
+  color: #fafafa !important;
 }
 
 .navbar-scrolled .navbar-brand {
-  color: #333 !important;
+  color: #fdfdfd !important;
 }
 
 .navbar-scrolled .navbar-toggler-icon {
@@ -89,7 +89,7 @@
 .navbar .nav-link,
 .navbar .navbar-brand,
 .navbar .navbar-toggler-icon {
-  transition: all 0.3s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 /* Mobile navbar improvements */
@@ -135,7 +135,8 @@
   }
 
   .navbar-collapse {
-    background-color: rgba(248, 249, 250, 0.98);
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(0, 0, 249, 250, 0.98);
     margin-top: 10px;
     padding: 20px;
     border-radius: 8px;
@@ -189,7 +190,7 @@ main {
 /* Hero Section Styling */
 .hero-section {
   height: 100vh;
-  background-image: url('../img/theflag.png');
+  background-image: url('../img/bgblue01.jpg');
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
@@ -198,7 +199,7 @@ main {
   z-index: 1;
   /* Add overlay for better text readability */
   background-blend-mode: overlay;
-  background-color: rgba(53, 56, 246, 0.919);
+  /* background-color: rgba(53, 56, 246, 0.919); */
 }
 
 .hero-container {
@@ -263,7 +264,7 @@ main {
 
 /* Services Section Styling */
 .services-section {
-  background-image: url('../img/theflag.png');
+  background-image: url('../img/bgblue01.jpg');
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
@@ -512,4 +513,153 @@ footer::before {
   .social-links a {
     min-width: 110px;
   }
+}
+
+/* Mobile Knight Icon Navigation Styles */
+.brand-logo {
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 767.98px) {
+  .brand-text {
+    display: none;
+  }
+  
+  .brand-logo {
+    margin-right: 0 !important;
+    cursor: pointer;
+  }
+  
+  .navbar-brand:hover .brand-logo {
+    transform: scale(1.1) rotate(10deg);
+  }
+}
+
+/* Mobile Nav Dropdown */
+.mobile-nav-wrapper {
+  position: relative;
+}
+
+.mobile-nav-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: rgba(0, 20, 80, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  min-width: 200px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-brand:hover ~ .mobile-nav-wrapper .mobile-nav-dropdown,
+.mobile-nav-wrapper:hover .mobile-nav-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.mobile-nav-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-nav-menu li {
+  margin-bottom: 10px;
+}
+
+.mobile-nav-menu li:last-child {
+  margin-bottom: 0;
+}
+
+.mobile-nav-menu a {
+  color: #ffffff;
+  text-decoration: none;
+  display: block;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.mobile-nav-menu a:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(5px);
+}
+
+/* Update navbar colors for blue background */
+.navbar.mask-custom .nav-link,
+.navbar.mask-custom .navbar-brand {
+  color: #ffffff !important;
+}
+
+.navbar.mask-custom:hover {
+  background-color: rgba(0, 20, 80, 0.9);
+}
+
+/* Hero and Services text colors for blue background */
+.hero-title,
+.hero-description,
+.hero-tagline,
+.hero-subtitle {
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.services-section {
+  color: #ffffff;
+}
+
+.services-section h1,
+.services-section h2,
+.services-section h3,
+.services-section p {
+  color: #ffffff;
+}
+
+/* Blog section text adjustments */
+.blog-title,
+.blog-subtitle {
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+[aria-describedby="footnote-label"] {
+  counter-increment: footnotes;
+  text-decoration: none;
+  color: inherit;
+  cursor: default;
+  outline: none;
+}
+
+[aria-describedby="footnote-label"]::after {
+  content: " ["counter(footnotes) "]";
+  font-size: 0.5em;
+  margin-left: 2px;
+  color: blueviolet;
+  text-decoration: underline;
+
+  cursor: pointer;
+}
+
+[aria-describedby="footnote-label"]:focus::after {
+  outline: 2px solid blueviolet;
+  outline-offset: 2px;
+  box-shadow: 0 0 5px rgba(0, 0, 255, 0.5);
+}
+
+[aria-label="Back-to-content"] {
+  font-size: 0.8em;
+}
+
+.p-text {
+  text-align: center;
+  font-size: .75em;
+  padding-top: 150px;
 }
