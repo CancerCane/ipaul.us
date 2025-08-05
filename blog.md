@@ -48,12 +48,19 @@ title: Blog
 <style>
 .blog-section {
   padding: 100px 0 50px;
-  background-image: url('{{ "/assets/img/bgblue01.jpg" | relative_url }}');
+  background-image: url('{{ "/assets/img/theflag.png" | relative_url }}');
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
+}
+
+/* Switch to blue background on smaller screens */
+@media (max-width: 768px) {
+  .blog-section {
+    background-image: url('{{ "/assets/img/bgblue01.jpg" | relative_url }}');
+  }
 }
 
 .blog-title {

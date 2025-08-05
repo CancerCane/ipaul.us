@@ -190,7 +190,7 @@ main {
 /* Hero Section Styling */
 .hero-section {
   height: 100vh;
-  background-image: url('../img/bgblue01.jpg');
+  background-image: url('../img/theflag.png');
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
@@ -200,6 +200,13 @@ main {
   /* Add overlay for better text readability */
   background-blend-mode: overlay;
   /* background-color: rgba(53, 56, 246, 0.919); */
+}
+
+/* Switch to blue background on smaller screens */
+@media (max-width: 768px) {
+  .hero-section {
+    background-image: url('../img/bgblue01.jpg');
+  }
 }
 
 .hero-container {
@@ -264,7 +271,7 @@ main {
 
 /* Services Section Styling */
 .services-section {
-  background-image: url('../img/bgblue01.jpg');
+  background-image: url('../img/theflag.png');
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
@@ -274,6 +281,13 @@ main {
   /* Add overlay for better content readability */
   background-blend-mode: overlay;
   /* background-color: rgba(249, 249, 249, 0.9); */
+}
+
+/* Switch to blue background on smaller screens */
+@media (max-width: 768px) {
+  .services-section {
+    background-image: url('../img/bgblue01.jpg');
+  }
 }
 
 /* Footer Styles */
@@ -512,6 +526,117 @@ footer::before {
 
   .social-links a {
     min-width: 110px;
+  }
+}
+
+/* New Navbar Design Styles */
+.nav-icon-wrapper {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.nav-icon {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.nav-icon:hover {
+  transform: scale(1.1) rotate(10deg);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.nav-dropdown-modal {
+  position: absolute;
+  top: calc(100% + 20px);
+  left: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 20px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  min-width: 200px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.nav-icon-wrapper:hover .nav-dropdown-modal {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.nav-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-menu li {
+  margin-bottom: 15px;
+}
+
+.nav-menu li:last-child {
+  margin-bottom: 0;
+}
+
+.nav-menu a {
+  color: #333;
+  text-decoration: none;
+  display: block;
+  padding: 12px 20px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.nav-menu a:hover {
+  background: rgba(94, 150, 147, 0.1);
+  transform: translateX(5px);
+  color: #5e9693;
+}
+
+/* Centered navbar brand */
+.navbar-brand {
+  position: relative !important;
+  transform: none !important;
+  margin: 0 auto;
+  color: #333;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar-brand {
+    font-size: 2rem;
+  }
+  
+  .nav-icon {
+    height: 35px;
+  }
+  
+  .nav-dropdown-modal {
+    background: rgba(0, 20, 80, 0.95);
+  }
+  
+  .nav-menu a {
+    color: #ffffff;
+  }
+  
+  .nav-menu a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+  }
+  
+  /* Adjust text colors for blue background on mobile */
+  .navbar.mask-custom .navbar-brand {
+    color: #ffffff !important;
   }
 }
 
