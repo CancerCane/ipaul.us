@@ -32,6 +32,14 @@ title: Contact
     <label for="subject">Subject</label>
     <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px" required></textarea>
 
+    <!-- Privacy Policy Consent -->
+    <div style="margin: 20px 0;">
+      <label class="consent-label">
+        <input type="checkbox" name="privacy_consent" required style="width: auto; margin-right: 10px;">
+        I have read and agree to the <a href="/privacy-policy" target="_blank">Privacy Policy</a> and <a href="/cookie-policy" target="_blank">Cookie Policy</a>
+      </label>
+    </div>
+
     <input type="submit" value="Submit">
 
   </form>

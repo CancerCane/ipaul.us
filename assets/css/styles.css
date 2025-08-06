@@ -471,6 +471,28 @@ footer::before {
   font-size: 0.9rem;
 }
 
+.legal-links {
+  margin-top: 10px;
+  font-size: 0.85rem;
+}
+
+.legal-links a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  padding: 0 10px;
+}
+
+.legal-links a:hover {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: underline;
+}
+
+.legal-links .separator {
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0 5px;
+}
+
 /* Responsive Footer */
 @media (max-width: 768px) {
   .footer-content {
