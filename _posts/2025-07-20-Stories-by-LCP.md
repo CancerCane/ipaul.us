@@ -1,5 +1,5 @@
    ---
-   layout: post
+   layout: default
    title: "Year 53 Starts Here"
    date: 2025-07-25
    categories:['blog']

@@ -9,19 +9,28 @@ title: Contact
     <div class="hero-content">
       <div class="text-center text-white hero-text">
         <div class="contact-form-container">
-  <form action="action_page.php">
-
+  <!-- Netlify Forms - FREE tier includes 100 submissions/month -->
+  <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/thank-you">
+    
+    <!-- Honeypot field for spam protection (hidden from users) -->
+    <p class="hidden" style="display:none !important">
+      <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+    </p>
+    
+    <!-- Hidden field to identify the form -->
+    <input type="hidden" name="form-name" value="contact">
+    
     <label for="fname">First Name</label>
-    <input type="text" id="fname" name="firstname" placeholder="Your name..">
+    <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
 
     <label for="lname">Last Name</label>
-    <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+    <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
 
     <label for="email">Email</label>
-    <input type="text" id="email" name="email" placeholder="Your email..">
+    <input type="email" id="email" name="email" placeholder="Your email.." required>
 
     <label for="subject">Subject</label>
-    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px" required></textarea>
 
     <input type="submit" value="Submit">
 

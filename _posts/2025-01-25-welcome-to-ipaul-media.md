@@ -10,7 +10,7 @@ excerpt: "We're excited to launch our new blog and share insights about web medi
 
 Welcome to the official blog of **IPaul Media & Creations**! We're thrilled to launch this platform where we'll be sharing insights, tutorials, and updates about our work in web media design, creations, and business services.
 
-## What We Do
+## 1. What We Do
 
 At IPaul Media & Creations, we specialize in:
 
@@ -18,23 +18,23 @@ At IPaul Media & Creations, we specialize in:
 - **Creation Solutions**: Custom gifts, personalized engravings and consultation services  
 - **Business Services**: Supporting veteran's, freelancers and sole proprietors with comprehensive business solutions
 
-## What You Can Expect
+## 2. What You Can Expect
 
 Our blog will feature:
 
-### Technical Tutorials
+### 2.1. Technical Tutorials
 Step-by-step guides on web development, ceramic and engraving projects, and business optimization.
 
-### Industry Insights
+### 2.2. Industry Insights
 Analysis of trends in web design, ceramic 3d printing and engraving innovation, and small business strategy.
 
-### Project Showcases
+### 2.3. Project Showcases
 Behind-the-scenes looks at our latest projects and client success stories.
 
-### Tips & Tricks
+### 2.4. Tips & Tricks
 Practical advice for entrepreneurs, developers, and 3d printing enthusiasts.
 
-## Get Involved
+## 3. Get Involved
 
 We'd love to hear from you! Whether you're interested in our services or just want to connect with like-minded professionals, don't hesitate to reach out.
 
