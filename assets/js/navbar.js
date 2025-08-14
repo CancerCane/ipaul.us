@@ -30,6 +30,9 @@
         
         // Check initial scroll position on page load
         handleScroll();
+        
+        // Initialize dropdown functionality
+        initDropdownMenu();
     }
     
     /**
@@ -49,6 +52,38 @@
                 navbar.classList.remove(SCROLLED_CLASS);
             }
         }
+    }
+    
+    /**
+     * Initialize dropdown menu functionality
+     */
+    function initDropdownMenu() {
+        const navIcon = document.querySelector('.nav-icon');
+        const dropdownModal = document.querySelector('.nav-dropdown-modal');
+        
+        if (!navIcon || !dropdownModal) {
+            return;
+        }
+        
+        // Toggle dropdown on icon hover
+        navIcon.addEventListener('mouseenter', function() {
+            dropdownModal.classList.add('show');
+        });
+        
+        // Keep dropdown open when hovering over the dropdown itself
+        const navIconWrapper = document.querySelector('.nav-icon-wrapper');
+        if (navIconWrapper) {
+            navIconWrapper.addEventListener('mouseleave', function() {
+                dropdownModal.classList.remove('show');
+            });
+        }
+        
+        // Optional: Close dropdown when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!navIconWrapper || !navIconWrapper.contains(e.target)) {
+                dropdownModal.classList.remove('show');
+            }
+        });
     }
     
     /**

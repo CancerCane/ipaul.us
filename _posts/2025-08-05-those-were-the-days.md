@@ -3,7 +3,7 @@ layout: post
 title: "Those were the days"
 date: 2025-08-05 12:12:12 -0500
 categories: [frameworks,we]
-author:"L.Cane Paul"
+author: "L.Cane Paul"
 featured_image: "/assets/img/self-portrait.jpg"
 excerpt: "The time we spent learning every nuance of the internet protocals html, css, and javascript..."
 ---

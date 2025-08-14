@@ -1,3 +1,248 @@
-
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
 
 @import "minima";
+
+// Base tokens
+$burgundy: #7B1E3F;
+$gold: #D4AF37;
+$black: #111111;
+$wheat: #F2E8D5;
+$bg: #0b0b0d;
+$text: #EDEDED;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: $bg;
+  color: $text;
+  font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial;
+}
+
+.container {
+  width: min(1100px, 92%);
+  margin-inline: auto;
+}
+
+.flex {
+  display: flex;
+  gap: 1rem;
+}
+
+.between {
+  justify-content: space-between;
+}
+
+.center {
+  align-items: center;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+}
+
+.prose p {
+  margin: 0 0 1rem;
+}
+
+.lead {
+  font-size: 1.125rem;
+  opacity: .9;
+}
+// Header
+.site-header {
+  position: sticky;
+  top: 0;
+  background: rgba(17,17,17,.8);
+  backdrop-filter: saturate(140%) blur(8px);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+  z-index: 10;
+}
+
+.site-header .brand {
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: $text;
+  text-decoration: none;
+}
+
+.site-header .brand span {
+  color: $gold;
+}
+
+.site-header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 1rem;
+}
+
+.site-header a {
+  color: $text;
+  text-decoration: none;
+  opacity: .9;
+}
+
+.site-header a.active,
+.site-header a:hover {
+  opacity: 1;
+}
+
+// Hero
+.hero {
+  padding: 80px 0;
+  background: radial-gradient(60% 120% at 50% -20%, rgba(123, 30, 63, .45), transparent),
+              linear-gradient(180deg, rgba(212, 175, 55, .05), transparent);
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin: 0 0 .5rem;
+}
+
+.hero .actions {
+  margin: 1rem 0 0;
+  display: flex;
+  gap: .75rem;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.badges li {
+  border: 1px solid rgba(255, 255, 255, .15);
+  padding: .35rem .6rem;
+  border-radius: 999px;
+  font-size: .85rem;
+  opacity: .85;
+}
+
+// Sections
+.section {
+  padding: 56px 0;
+}
+
+.highlight {
+  background: linear-gradient(0deg, rgba(123, 30, 63, .1), transparent);
+}
+
+.page-hero {
+  padding: 56px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, .08);
+}
+
+// Cards
+.card {
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: 16px;
+  padding: 1rem;
+  background: rgba(255, 255, 255, .02);
+}
+
+.pill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.pill-list li {
+  border: 1px solid rgba(255, 255, 255, .15);
+  padding: .45rem .7rem;
+  border-radius: 999px;
+}
+
+// Buttons
+.btn {
+  display: inline-block;
+  padding: .7rem 1rem;
+  border-radius: 999px;
+  border: 1px solid $gold;
+  background: $gold;
+  color: $black;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.btn:hover {
+  filter: brightness(1.05);
+}
+
+.btn-ghost {
+  background: transparent;
+  border-color: rgba(255, 255, 255, .25);
+  color: $text;
+}
+
+.btn.small {
+  padding: .45rem .8rem;
+  font-weight: 600;
+}
+
+// Footer
+.site-footer {
+  border-top: 1px solid rgba(255, 255, 255, .08);
+  background: #0d0d10;
+}
+
+.site-footer .grid-3 {
+  padding: 32px 0;
+}
+
+.site-footer h4 {
+  margin: .2rem 0 .4rem;
+}
+
+.fineprint {
+  border-top: 1px solid rgba(255, 255, 255, .08);
+  padding: 12px 0;
+  color: rgba(255, 255, 255, .7);
+}
+
+// CTA band
+.cta-band {
+  background: linear-gradient(90deg, rgba(212, 175, 55, .1), rgba(123, 30, 63, .12));
+  padding: 20px 0;
+  border-top: 1px solid rgba(255, 255, 255, .08);
+  border-bottom: 1px solid rgba(255, 255, 255, .08);
+}
+
+.cta-band h3 {
+  margin: 0;
+}
+
+// Accessibility
+:focus {
+  outline: 2px solid $gold;
+  outline-offset: 3px;
+}
+
+@media (max-width: 720px) {
+  .between {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .hero {
+    padding: 64px 0;
+  }
+}

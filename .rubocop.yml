@@ -1,0 +1,52 @@
+# RuboCop configuration for Jekyll project
+# See: https://docs.rubocop.org/rubocop/configuration.html
+
+require:
+  - rubocop-performance
+
+AllCops:
+  TargetRubyVersion: 3.4
+  NewCops: enable
+  Exclude:
+    - 'vendor/**/*'
+    - '_site/**/*'
+    - 'node_modules/**/*'
+    - 'tmp/**/*'
+    - 'log/**/*'
+    - '.git/**/*'
+    - 'Gemfile.lock'
+
+# Relaxed settings for Jekyll projects
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 120
+  Exclude:
+    - 'Gemfile'
+
+Metrics/BlockLength:
+  Exclude:
+    - '_config.yml'
+    - 'Rakefile'
+    - '*.gemspec'
+
+Layout/LineLength:
+  Max: 120
+
+# Allow Jekyll-style naming
+Naming/FileName:
+  Exclude:
+    - '_posts/**/*'
+    - '_drafts/**/*'
+    - '_pages/**/*'
+
+# Performance optimizations
+Performance/RedundantBlockCall:
+  Enabled: true
+
+Performance/RedundantMatch:
+  Enabled: true

@@ -8,9 +8,13 @@
     />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <title>{% if page.title %}{{ page.title }} - {% endif %}IPaul Media and Creations</title>
+    {% include head.html %}
     <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" type="image/x-icon" />
     <link rel="icon" href="{{ '/favicon.png' | relative_url }}" type="image/png" />
     <link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | relative_url }}" />
+    <!-- Load minima theme CSS first -->
+    <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}" />
+    <!-- Then load additional CSS -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -21,6 +25,7 @@
     />
     <link rel="stylesheet" href="{{ '/assets/css/mdb.dark.min.css' | relative_url }}" />
     <link rel="stylesheet" href="{{ '/assets/css/flip.css' | relative_url }}" />
+    <!-- Custom styles last to override everything -->
     <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}" />
   </head>
 
@@ -28,8 +33,11 @@
     <header>
       {% include navbar.html %}
     </header>
-
-    {{ content }}
+    
+    <main id="content">{{ content }}</main>
+    
+    {% include cta-band.html %}
+    {% include scripts.html %}
 
     {% include footer.html %}
 

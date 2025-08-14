@@ -21,19 +21,43 @@
 title: IPaul Media
 email: ipaul@ipaul.us
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+ Veteran owned creative + hosting studio in Dallas, Tx.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
-github_username:  jekyll
+url: "https://ipaul.us" # the base hostname & protocol for your site, e.g. http://example.com
+# twitter_username: jekyllrb
+# github_username:  jekyll
 
 # Build settings
 theme: minima
+permalink: pretty
+collections: []
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: 
+        #image: "/assets/img/logoIPM.png"
+
+
+# Social / Contact
+phone: "945-358-6263"
+email: "lpaul@ipaul.us"
+location: "Dallas, Tx (Deep Ellum)"
+
+# SEO
+author: "IPaul Media"
+keywords: "IPaul Media, IPM, Dallas, Tx, Creative Studio, Veteran Owned, Web Design, Hosting, Photography, Videography, Graphic Design"
+logo: "/assets/img/logoIPM.png"
+favicon: "/assets/img/favicon.ico"
+
+# Plugins
 plugins:
   - jekyll-feed
-
+  - jekyll-seo-tag
+  - jekyll-sitemap
 # Sass options
 sass:
   sass_dir: "_sass"

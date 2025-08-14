@@ -1,7 +1,27 @@
 ---
 layout: default
-title: Contact
+title: Let's build something
+sudbtitle: Tell us what you're working on. We'll reply within 1-2 business days.
 ---
+
+
+<!-- 
+**Contact**
+- Dallas, Texas (Deep Ellum)
+- Email: [hello@ipaulmedia.com](mailto:hello@ipaulmedia.com)
+- Phone: [945‑358‑6236](tel:1-9453586236)
+- Hours: Mon–Fri, 10am–6pm CT
+**Form** *(hook up to your provider or Netlify Forms)*
+- **Name** — What should we call you?
+- **Email** — We’ll keep this private.
+- **Phone (optional)** — Faster for quick questions.
+- **Project Type** — Branding · Website · Hosting · Photo/Video · Makers Studio
+· Other
+- **Budget Range** — Under $1k · $1–3k · $3–8k · $8k+
+- **Message** — A few details help us prep.
+**After submit:** Thanks! We’ll review and reach out soon. If it’s urgent, call
+945‑358‑6236.
+**Error:** Something went wrong. Please try again or email hello@ipaulmedia.com. -->
 
 <!-- Hero Section -->
 <section id="hero" class="hero-section">

@@ -1,55 +1,67 @@
+/* Reset body padding that minima adds */
+body {
+  padding-top: 0 !important;
+}
+
 /* Navbar Transition Styles */
 .navbar {
   transition: all 0.3s ease-in-out;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+  list-style-type: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
   overflow: visible !important;
-  background-color: #f7f4f33f;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 60px;
-  z-index: 1030;
+  background-color: transparent !important;
+  position: fixed !important;
+  top: 0 !important;
+  width: 100% !important;
+  height: 60px !important;
+  z-index: 1030 !important;
 }
 
+/* Initial navbar state - fully transparent glassmorphism */
 .navbar.mask-custom {
-  background-color: transparent;
-  box-shadow: none;
+  background-color: transparent !important;
+  backdrop-filter: blur(10px) !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  box-shadow: none !important;
+  border-bottom: none !important;
 }
 
+/* Navbar hover state - enhanced frosted glass */
 .navbar.mask-custom:hover {
-  background-color: #f8f9fa;
-  box-shadow: 0 0.8rem 1rem rgba(0, 0, 0, 0.021);
+  background-color: rgba(255, 255, 255, 0.12) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.navbar-scroll .nav-link,
-.navbar-scroll .navbar-toggler-icon,
-.navbar-scroll .navbar-brand {
-  color: #fff;
-  /* Improved contrast for better visibility */
+/* Navbar pre-scroll state - white text with shadow for readability */
+.navbar .nav-link,
+.navbar .navbar-brand {
+  color: rgba(255, 255, 255, 0.9) !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
 }
 
+/* Navbar scrolled state */
 .navbar-scrolled .nav-link,
 .navbar-scrolled .navbar-toggler-icon,
 .navbar-scrolled .navbar-brand {
-  color: #333;
-  /* Improved contrast for better visibility */
+  color: #fafafa !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
 }
 
-.navbar-scroll,
-.navbar-scrolled {
-  background-color: #f7f4f33f;
-}
-
+/* Generic mask-custom class for other elements */
 .mask-custom {
-  backdrop-filter: blur(6px);
-  background-color: rgba(182, 181, 181, 0.096);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .mask-custom-2 {
-  backdrop-filter: blur(3px);
-  background-color: rgba(116, 115, 115, 0.075);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  background-color: rgba(255, 255, 255, 0.15);
 }
 
 .contact-form-container {
@@ -69,17 +81,21 @@
 
 /* Enhanced navbar scrolled state with better contrast */
 .navbar-scrolled {
-  background-color: rgba(0, 0, 64, 0.8) !important;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 64, 0.85) !important;
+  backdrop-filter: blur(15px) !important;
+  -webkit-backdrop-filter: blur(15px) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 
 .navbar-scrolled .nav-link {
   color: #fafafa !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
 }
 
 .navbar-scrolled .navbar-brand {
   color: #fdfdfd !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) !important;
 }
 
 .navbar-scrolled .navbar-toggler-icon {
@@ -146,7 +162,7 @@
   }
 
   .navbar-nav .nav-link {
-    color: #333 !important;
+    color: #f6f5f5 !important;
     padding: 10px 0;
     font-weight: 500;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -183,10 +199,10 @@ header {
 
 /* Main content section */
 main {
-  padding-top: 80px;
-  /* Additional spacing below navbar */
-  min-height: calc(100vh - 80px - 100px);
-  /* Adjust for footer height */
+  padding-top: 0;
+  /* Hero section will be full height */
+  min-height: 100vh;
+  /* Full viewport height */
 }
 
 /* Hero Section Styling */
@@ -578,8 +594,9 @@ footer::before {
   position: fixed;
   top: 70px;
   left: 20px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(6px);
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-radius: 15px;
   padding: 20px;
   opacity: 0;
@@ -587,10 +604,10 @@ footer::before {
   transform: translateY(-10px);
   transition: all 0.3s ease;
   min-width: 200px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   z-index: 2000;
   max-width: 400px;
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .nav-icon-wrapper:hover .nav-dropdown-modal {
@@ -614,7 +631,7 @@ footer::before {
 }
 
 .nav-menu a {
-  color: #333;
+  color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
   display: block;
   padding: 12px 20px;
@@ -622,12 +639,15 @@ footer::before {
   transition: all 0.3s ease;
   font-weight: 500;
   font-size: 1rem;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .nav-menu a:hover {
-  background: rgba(94, 150, 147, 0.1);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
   transform: translateX(5px);
-  color: #5e9693;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Centered navbar brand */
@@ -635,7 +655,7 @@ footer::before {
   position: relative !important;
   transform: none !important;
   margin: 0 auto;
-  color: #333;
+  color: #faf9f9;
 }
 
 /* Responsive adjustments */
@@ -643,25 +663,30 @@ footer::before {
   .navbar-brand {
     font-size: 2rem;
   }
-  
+
   .nav-icon {
     height: 35px;
   }
-  
+
   .nav-dropdown-modal {
-    background: rgba(0, 20, 80, 0.95);
-  }
-  
-  .nav-menu a {
-    color: #ffffff;
-  }
-  
-  .nav-menu a:hover {
     background: rgba(255, 255, 255, 0.1);
-    color: #ffffff;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
   }
-  
-  /* Adjust text colors for blue background on mobile */
+
+  .nav-menu a {
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+  }
+
+  .nav-menu a:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    backdrop-filter: blur(5px);
+  }
+
+  /* Adjust text colors for mobile */
   .navbar.mask-custom .navbar-brand {
     color: #ffffff !important;
   }
@@ -676,12 +701,12 @@ footer::before {
   .brand-text {
     display: none;
   }
-  
+
   .brand-logo {
     margin-right: 0 !important;
     cursor: pointer;
   }
-  
+
   .navbar-brand:hover .brand-logo {
     transform: scale(1.1) rotate(10deg);
   }
@@ -696,8 +721,9 @@ footer::before {
   position: absolute;
   top: 100%;
   right: 0;
-  background: rgba(0, 20, 80, 0.95);
-  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   border-radius: 10px;
   padding: 15px;
   margin-top: 10px;
@@ -706,10 +732,11 @@ footer::before {
   transform: translateY(-10px);
   transition: all 0.3s ease;
   min-width: 200px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.navbar-brand:hover ~ .mobile-nav-wrapper .mobile-nav-dropdown,
+.navbar-brand:hover~.mobile-nav-wrapper .mobile-nav-dropdown,
 .mobile-nav-wrapper:hover .mobile-nav-dropdown {
   opacity: 1;
   visibility: visible;
@@ -731,28 +758,34 @@ footer::before {
 }
 
 .mobile-nav-menu a {
-  color: #ffffff;
+  color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
   display: block;
   padding: 10px 15px;
   border-radius: 5px;
   transition: all 0.3s ease;
   font-weight: 500;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .mobile-nav-menu a:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
   transform: translateX(5px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Update navbar colors for blue background */
+/* Update navbar colors for frosted glass effect */
 .navbar.mask-custom .nav-link,
 .navbar.mask-custom .navbar-brand {
   color: #ffffff !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .navbar.mask-custom:hover {
-  background-color: rgba(0, 20, 80, 0.9);
+  background-color: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 /* Hero and Services text colors for blue background */
@@ -814,4 +847,484 @@ footer::before {
   text-align: center;
   font-size: .75em;
   padding-top: 150px;
+}
+
+/* Footer Company Links */
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: white;
+  transform: translateX(3px);
+}
+
+/* Footer Footnotes Section */
+.footer-footnotes {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 2rem 0;
+  margin-top: 3rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footnotes-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.footnotes-title {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.footnotes-list {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+  counter-reset: footnotes;
+}
+
+.footnotes-list li {
+  color: #e0e0e0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.footnote-marker {
+  position: absolute;
+  left: 0;
+  color: #ffd700;
+  font-weight: 600;
+}
+
+.footnote-backref {
+  color: #89aadf;
+  text-decoration: none;
+  margin-left: 0.5rem;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.footnote-backref:hover {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767.98px) {
+  .footnotes-container {
+    padding: 0 1rem;
+  }
+
+  .footnotes-title {
+    font-size: 1rem;
+  }
+
+  .footnotes-list li {
+    font-size: 0.85rem;
+  }
+}
+
+/* Shop Page Styling */
+.page-hero {
+  padding-top: 80px;
+  padding-bottom: 2rem;
+  text-align: center;
+  background-image: url('../img/theflag.png');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 1;
+}
+
+/* Switch to blue background on smaller screens */
+@media (max-width: 768px) {
+  .page-hero {
+    background-image: url('../img/bgblue01.jpg');
+  }
+}
+
+.page-hero h1 {
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1rem;
+}
+
+.page-hero .lead {
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+  opacity: 0.9;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Shop Content Section */
+.section {
+  background-image: url('../img/theflag.png');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 1;
+}
+
+/* Switch to blue background on smaller screens for all sections */
+@media (max-width: 768px) {
+  .section {
+    background-image: url('../img/bgblue01.jpg');
+  }
+}
+
+/* Product Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+  padding: 2rem 0;
+}
+
+/* Product Card */
+.product-card {
+  perspective: 1000px;
+  height: 400px;
+  position: relative;
+}
+
+.product-flip-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.product-card:hover .product-flip-container {
+  transform: rotateY(180deg);
+}
+
+.product-front,
+.product-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.product-front {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.product-back {
+  background: rgba(255, 255, 255, 0.15);
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* Product Image */
+.product-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.placeholder-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.product-card:hover .placeholder-img {
+  opacity: 0.9;
+  transform: scale(1.05);
+}
+
+.product-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 64, 0.5));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 2rem;
+}
+
+.product-overlay h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.product-category {
+  font-size: 1rem;
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 500;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+/* Product Info (Back of Card) */
+.product-info {
+  width: 100%;
+  color: white;
+  text-align: left;
+}
+
+.product-info h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.product-description {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Feature Tags */
+.product-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.feature-tag {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Pricing Section */
+.product-pricing {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.price {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #D4AF37;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.turnaround {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Product CTA Button */
+.product-cta {
+  display: block;
+  width: 100%;
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(135deg, #D4AF37, #B8941F);
+  color: #111111;
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 25px;
+  text-align: center;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  text-shadow: none;
+}
+
+.product-cta:hover {
+  background: linear-gradient(135deg, #E5C052, #D4AF37);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  color: #111111;
+  text-decoration: none;
+}
+
+/* Shop Info Section */
+.shop-info-section {
+  margin-top: 4rem;
+  padding: 3rem 0;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.shop-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.info-card {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+
+.info-card:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.info-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.info-card h3 {
+  color: #ffffff;
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.info-card p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  line-height: 1.6;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1rem 0;
+  }
+  
+  .product-card {
+    height: 350px;
+  }
+  
+  .product-back {
+    padding: 1.5rem;
+  }
+  
+  .product-info h3 {
+    font-size: 1.3rem;
+  }
+  
+  .product-description {
+    font-size: 0.9rem;
+  }
+  
+  .product-overlay h3 {
+    font-size: 1.5rem;
+  }
+  
+  .shop-info-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .info-card {
+    padding: 1.5rem;
+  }
+  
+  .page-hero {
+    padding-top: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-card {
+    height: 320px;
+  }
+  
+  .product-back {
+    padding: 1rem;
+  }
+  
+  .product-features {
+    gap: 0.3rem;
+  }
+  
+  .feature-tag {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.5rem;
+  }
+  
+  .product-pricing {
+    padding: 0.8rem;
+  }
+  
+  .price {
+    font-size: 1.1rem;
+  }
+  
+  .turnaround {
+    font-size: 0.8rem;
+  }
 }

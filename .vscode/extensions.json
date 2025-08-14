@@ -1,0 +1,13 @@
+{
+    "recommendations": [
+        "Shopify.ruby-lsp",
+        "bradlc.vscode-tailwindcss",
+        "ms-vscode.vscode-json",
+        "yzhang.markdown-all-in-one",
+        "DavidAnson.vscode-markdownlint"
+    ],
+    "unwantedRecommendations": [
+        "rebornix.ruby",
+        "wingrunr21.vscode-ruby"
+    ]
+}

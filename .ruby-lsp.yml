@@ -1,0 +1,48 @@
+# Ruby LSP configuration for Jekyll project
+# See: https://shopify.github.io/ruby-lsp/RubyLsp/Configuration.html
+
+# Formatter settings
+formatter: rubocop
+
+# Linter settings
+linters:
+  - rubocop
+
+# Features configuration
+features:
+  # Enable/disable specific language server features
+  inlayHint: true
+  completion: true
+  hover: true
+  signatureHelp: true
+  documentSymbol: true
+  workspaceSymbol: true
+  codeAction: true
+  diagnostics: true
+  documentHighlight: true
+  documentLink: true
+  colorProvider: true
+  foldingRange: true
+  selectionRange: true
+  semanticHighlighting: true
+  formatting: true
+  onTypeFormatting: false
+
+# Experimental features (can be enabled as needed)
+experimental:
+  addon: false
+
+# Enable indexing for better performance
+indexing:
+  # Index gems for better completion and navigation
+  includedPatterns:
+    - "**/*.rb"
+    - "**/*.rake"
+  excludedPatterns:
+    - "**/node_modules/**"
+    - "**/vendor/**"
+    - "**/.git/**"
+    - "**/tmp/**"
+    - "**/log/**"
+    - "**/_site/**"    # Jekyll build output
+    - "**/coverage/**"

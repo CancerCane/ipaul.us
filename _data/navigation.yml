@@ -1,0 +1,17 @@
+main:
+  - title: Home
+    url: /
+  - title: Services
+    url: /services/
+  - title: Portfolio
+    url: /portfolio/
+  - title: Veterans
+    url: /veterans/
+  - title: Tools
+    url: /tools/
+  - title: Shop
+    url: /shop/
+  - title: About
+    url: /about/
+  - title: Contact
+    url: /contact/

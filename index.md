@@ -28,7 +28,7 @@ title: Home
 </section>
 
 <!-- Services Section -->
-<section id="services" class="services-section">
+<section id="services" class="services-section mask-custom-2">
   <div class="container">
     <div class="text-center mb-5">
       <h1 class="services-title">Our Services</h1>
@@ -42,19 +42,24 @@ title: Home
       <div class="flip-box">
         <div
           class="flip-box-front text-center"
-          style="background-image: url('{{ '/assets/img/bg02.png' | relative_url }}')"
+          style="background-image: url('{{ '/assets/img/bgblue01.jpg' | relative_url }}')"
         >
           <div class="inner color-white">
-            <img
+          <h4>Hosting</h4>
+            <!-- <img
               src="{{ '/assets/img/bg01.jpg' | relative_url }}"
               alt=""
               class="flip-box-img"
-            />
+            /> -->
+            <p class="flip-box-text">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Voluptates, animi. asdf asd fasfsfff asfasf asdf asdf asdf asdf asdf
+            </p>
           </div>
         </div>
         <div
           class="flip-box-back text-center"
-          style="background-image: url('{{ '/assets/img/knights01.png' | relative_url }}')"
+          style="background-image: url('{{ '/assets/img/dilogo.png' | relative_url }}')"
         >
           <div class="inner color-white">
             <h3 class="flip-box-header">Dedicated</h3>
@@ -70,19 +75,19 @@ title: Home
       <div class="flip-box">
         <div
           class="flip-box-front text-center"
-          style="background-image: url('{{ '/assets/img/bg01.jpg' | relative_url }}')"
+          style="background-image: url('{{ '/assets/img/bgblue01.jpg' | relative_url }}')"
         >
           <div class="inner color-white">
-            <img
+            <!-- <img
               src="{{ '/assets/img/ipmknight-logo1.png' | relative_url }}"
               alt=""
               class="flip-box-img"
-            />
+            /> -->
           </div>
         </div>
         <div
           class="flip-box-back text-center"
-          style="background-image: url('{{ '/assets/img/bg01.jpg' | relative_url }}')"
+          style="background-image: url('{{ '/assets/img/dilogo.png' | relative_url }}')"
         >
           <div class="inner color-white">
             <h3 class="flip-box-header">Dedicated</h3>
@@ -98,19 +103,19 @@ title: Home
       <div class="flip-box">
         <div
           class="flip-box-front text-center"
-          style="background-image: url('{{ '/assets/img/bg01.jpg' | relative_url }}')"
+          style="background-image: url('{{ '/assets/img/bgblue01.jpg' | relative_url }}')"
         >
           <div class="inner color-white">
-            <img
+            <!-- <img
               src="{{ '/assets/img/ipm-studio-logo-knght-red.png' | relative_url }}"
               alt=""
               class="flip-box-img"
-            />
+            /> -->
           </div>
         </div>
         <div
           class="flip-box-back text-center"
-          style="background-image: url('{{ '/assets/img/bg01.jpg' | relative_url }}')"
+          style="background-image: url('{{ '/assets/img/dilogo.png' | relative_url }}')"
         >
           <div class="inner color-white">
             <h3 class="flip-box-header">Dedicated</h3>

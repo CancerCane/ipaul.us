@@ -1,0 +1,15 @@
+<header class="site-header">
+  <div class="container flex between center">
+    <a class="brand" href="{{ "/" | relative_url }}">iPaul <span>Media</span></a>
+    <nav>
+      <ul>
+     {%- for item in site.data.navigation.main -%}
+          <li>
+            <a href="{{ item.url | relative_url }}" class="{% if page.url == item.url %}active{% endif %}">{{ item.title }}</a>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </nav>
+    <a class="btn btn-ghost small" href="{{ "/contact/" | relative_url }}">Start a Project</a>
+  </div>
+</header>

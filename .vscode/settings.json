@@ -10,7 +10,7 @@
         "html": "html",
         "css": "css",
         "scss": "css",
-        "sass": "css",
+        "sass": "sass",
         "less": "css"
     },
     "open-default-browser": true,
@@ -21,5 +21,21 @@
     "html.validate": false,
     "javascript.format.enable": true,
     "javascript.validate": false,
-    "html.suggest.html5": true
+    "html.suggest.html5": true,
+    "ruby.useLanguageServer": true,
+    "ruby.formatter": "rubocop",
+    "ruby.useBundler": true,
+    "ruby.lint": {
+        "rubocop": {
+            "useBundler": true
+        }
+    },
+    "[ruby]": {
+        "editor.defaultFormatter": "Shopify.ruby-lsp",
+        "editor.formatOnSave": true,
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
+        "editor.rulers": [120],
+        "editor.semanticHighlighting.enabled": true
+    }
 }

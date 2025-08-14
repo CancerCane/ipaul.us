@@ -24,6 +24,13 @@
         "link-name": "off"
       }
     ],
-    "css-prefix-order": "off"
+    "css-prefix-order": "off",
+    "axe/structure": [
+      "default",
+      {
+        "list": "off"
+      }
+    ],
+    "apple-touch-icons": "off"
   }
 }
