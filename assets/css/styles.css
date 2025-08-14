@@ -1013,6 +1013,8 @@ footer::before {
   perspective: 1000px;
   height: 400px;
   position: relative;
+  margin-bottom: 2rem; /* Add space between cards */
+  z-index: 1;
 }
 
 .product-flip-container {
@@ -1027,6 +1029,7 @@ footer::before {
 
 .product-card:hover .product-flip-container {
   transform: rotateY(180deg);
+  z-index: 10; /* Bring flipped card to front */
 }
 
 .product-front,
@@ -1051,9 +1054,10 @@ footer::before {
   background: rgba(255, 255, 255, 0.15);
   transform: rotateY(180deg);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
-  padding: 2rem;
+  padding: 1.5rem;
+  overflow-y: auto;
 }
 
 /* Product Image */
@@ -1117,39 +1121,45 @@ footer::before {
 }
 
 .product-info h3 {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
   color: #ffffff;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  line-height: 1.2;
 }
 
 .product-description {
-  font-size: 0.95rem;
-  line-height: 1.5;
-  margin-bottom: 1.5rem;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
   color: rgba(255, 255, 255, 0.9);
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 /* Feature Tags */
 .product-features {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
 }
 
 .feature-tag {
   background: rgba(255, 255, 255, 0.2);
   color: white;
-  padding: 0.25rem 0.75rem;
-  border-radius: 15px;
-  font-size: 0.8rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
   font-weight: 500;
   backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  white-space: nowrap;
 }
 
 /* Pricing Section */
@@ -1157,23 +1167,23 @@ footer::before {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1.5rem;
-  padding: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.7rem;
   background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
+  border-radius: 8px;
   backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .price {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: #D4AF37;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 
 .turnaround {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.8);
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
@@ -1182,13 +1192,13 @@ footer::before {
 .product-cta {
   display: block;
   width: 100%;
-  padding: 0.8rem 1.5rem;
+  padding: 0.7rem 1.2rem;
   background: linear-gradient(135deg, #D4AF37, #B8941F);
   color: #111111;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 0.9rem;
   text-decoration: none;
-  border-radius: 25px;
+  border-radius: 20px;
   text-align: center;
   transition: all 0.3s ease;
   border: 2px solid rgba(255, 255, 255, 0.2);

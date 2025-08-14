@@ -21,7 +21,7 @@ subtitle: Personalized engravings and ceramic 3D prints. Fast turnarounds, giftâ
       <div class="product-back">
         <div class="product-info">
           <h3>Engraved Drinkware</h3>
-          <p class="product-description">Personalized mugs, tumblers, and water bottles with your custom text or logo. Perfect for corporate gifts or personal use.</p>
+          <p class="product-description">Custom mugs, tumblers & bottles with your text or logo. Perfect for gifts.</p>
           <div class="product-features">
             <span class="feature-tag">Custom Text</span>
             <span class="feature-tag">Logo Upload</span>
@@ -52,7 +52,7 @@ subtitle: Personalized engravings and ceramic 3D prints. Fast turnarounds, giftâ
       <div class="product-back">
         <div class="product-info">
           <h3>Nameplates & Badges</h3>
-          <p class="product-description">Professional nameplates and badges for office doors, desks, or personal identification. Various materials and finishes available.</p>
+          <p class="product-description">Professional nameplates and badges for offices. Various materials & finishes available.</p>
           <div class="product-features">
             <span class="feature-tag">Multiple Sizes</span>
             <span class="feature-tag">Premium Finishes</span>
@@ -83,7 +83,7 @@ subtitle: Personalized engravings and ceramic 3D prints. Fast turnarounds, giftâ
       <div class="product-back">
         <div class="product-info">
           <h3>Plaques & Awards</h3>
-          <p class="product-description">Custom plaques and awards for recognition ceremonies, achievements, or commemorative events. Premium materials and craftsmanship.</p>
+          <p class="product-description">Custom plaques & awards for recognition ceremonies. Premium materials & craftsmanship.</p>
           <div class="product-features">
             <span class="feature-tag">Wood & Metal</span>
             <span class="feature-tag">Custom Shapes</span>
@@ -114,7 +114,7 @@ subtitle: Personalized engravings and ceramic 3D prints. Fast turnarounds, giftâ
       <div class="product-back">
         <div class="product-info">
           <h3>Ceramic 3D Prints</h3>
-          <p class="product-description">Custom ceramic pieces, art objects, and prototypes using advanced 3D printing technology. Perfect for unique decorative items.</p>
+          <p class="product-description">Custom ceramic art & prototypes using 3D printing technology. Perfect for unique decor.</p>
           <div class="product-features">
             <span class="feature-tag">Custom Designs</span>
             <span class="feature-tag">Food Safe</span>
@@ -145,7 +145,7 @@ subtitle: Personalized engravings and ceramic 3D prints. Fast turnarounds, giftâ
       <div class="product-back">
         <div class="product-info">
           <h3>Limited Edition Items</h3>
-          <p class="product-description">Exclusive, limited-quantity items featuring unique designs and premium materials. Perfect for collectors and special occasions.</p>
+          <p class="product-description">Exclusive limited-quantity items with unique designs. Perfect for collectors & special occasions.</p>
           <div class="product-features">
             <span class="feature-tag">Limited Quantity</span>
             <span class="feature-tag">Premium Materials</span>
@@ -176,7 +176,7 @@ subtitle: Personalized engravings and ceramic 3D prints. Fast turnarounds, giftâ
       <div class="product-back">
         <div class="product-info">
           <h3>Custom Projects</h3>
-          <p class="product-description">Have something specific in mind? We work with you to create completely custom pieces tailored to your exact specifications.</p>
+          <p class="product-description">Have something specific in mind? We create custom pieces tailored to your specifications.</p>
           <div class="product-features">
             <span class="feature-tag">Your Design</span>
             <span class="feature-tag">Any Material</span>
