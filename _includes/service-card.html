@@ -1,0 +1,20 @@
+<div class="grid-item">
+  <h3 class="flip-box-header">{{ include.title }}</h3>
+  <p>{{ include.description }}</p>
+  
+  <div class="flip-box">
+    <div class="flip-box-front text-center" style="background-image: url('{{ include.front_image | relative_url }}')">
+      <div class="inner color-white">
+        <h4>{{ include.front_title }}</h4>
+        <p class="flip-box-text">{{ include.front_text }}</p>
+      </div>
+    </div>
+    <div class="flip-box-back text-center" style="background-image: url('{{ include.back_image | relative_url }}')">
+      <div class="inner color-white">
+        <h3 class="flip-box-header">{{ include.back_title }}</h3>
+        <p>{{ include.back_text }}</p>
+        <a href="{{ include.cta_link }}" class="flip-box-button">{{ include.cta_text }}</a>
+      </div>
+    </div>
+  </div>
+</div>

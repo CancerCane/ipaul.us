@@ -1,5 +1,6 @@
 ---
 title: About iPaul Media
+layout: home
 subtitle: A veteran‑owned creative and hosting studio focused on results and long‑term support.
 ---
 We design brands, build and host websites, produce visuals, and run a makers

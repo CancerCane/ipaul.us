@@ -1,4 +1,5 @@
----
+--- 
+layout:default
 title: Selected Work
 subtitle: Projects across design, web, photo/video, and makers studio.
 ---

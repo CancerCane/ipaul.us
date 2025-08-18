@@ -1,0 +1,29 @@
+<div class="product-card">
+  <div class="product-flip-container">
+    <div class="product-front">
+      <div class="product-image">
+        <img src="{{ include.image | relative_url }}" alt="{{ include.alt }}" class="placeholder-img">
+        <div class="product-overlay">
+          <h3>{{ include.title }}</h3>
+          <p class="product-category">{{ include.category }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="product-back">
+      <div class="product-info">
+        <h3>{{ include.title }}</h3>
+        <p class="product-description">{{ include.description }}</p>
+        <div class="product-features">
+          {% for feature in include.features %}
+          <span class="feature-tag">{{ feature }}</span>
+          {% endfor %}
+        </div>
+        <div class="product-pricing">
+          <span class="price">{{ include.price }}</span>
+          <span class="turnaround">{{ include.turnaround }}</span>
+        </div>
+        <a href="{{ include.cta_link }}" class="product-cta">{{ include.cta_text }}</a>
+      </div>
+    </div>
+  </div>
+</div>

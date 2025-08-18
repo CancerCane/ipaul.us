@@ -1,4 +1,5 @@
 ---
+layout: page
 title: Tools & Resources
 subtitle: Free utilities for founders and veterans.
 ---

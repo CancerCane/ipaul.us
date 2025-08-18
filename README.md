@@ -1,6 +1,6 @@
 # ipaul.us - v1.0.0
 
-**iPaul Media Jekyll Site**
+## iPaul Media Jekyll Site
 
 A modern, responsive Jekyll-based website featuring knight branding, translucent UI elements, and adaptive backgrounds.
 
@@ -49,15 +49,17 @@ bundle exec jekyll build
 ### GitHub Pages
 
 1. Push to GitHub:
-```bash
+
+``` bash
+
 git add .
 git commit -m "Deploy v1.0.0"
 git push origin main
 ```
 
-2. Enable GitHub Pages in repository settings
-3. Select source branch (main) and folder (root)
-4. Site will be available at `https://yourusername.github.io/ipaul.us`
+1. Enable GitHub Pages in repository settings
+2. Select source branch (main) and folder (root)
+3. Site will be available at `https://yourusername.github.io/ipaul.us`
 
 ### Custom Domain
 
@@ -67,7 +69,7 @@ git push origin main
 
 ## Project Structure
 
-```
+``` bash
 ipaul.us/
 ├── _config.yml          # Jekyll configuration
 ├── _layouts/            # Page layouts
@@ -86,15 +88,18 @@ ipaul.us/
 ## Customization
 
 ### Navigation
+
 - Edit `_includes/navbar.html` to modify menu items
 - Adjust hover effects in `assets/css/styles.css`
 
 ### Backgrounds
+
 - Desktop background: `assets/img/theflag.png`
 - Mobile background: `assets/img/bgblue01.jpg`
 - Change breakpoint in CSS media queries
 
 ### Colors
+
 - Primary accent: `#5e9693`
 - Edit color scheme in `assets/css/styles.css`
 
@@ -112,5 +117,5 @@ This project is proprietary to iPaul Media.
 
 ## Contact
 
-- Email: ipaul@ipaul.us
-- Website: https://ipaul.us
+- Email: <ipaul@ipaul.us>
+- Website: <https://ipaul.us>

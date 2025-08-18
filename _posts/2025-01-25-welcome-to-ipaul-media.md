@@ -23,23 +23,31 @@ At IPaul Media & Creations, we specialize in:
 Our blog will feature:
 
 ### 2.1. Technical Tutorials
+
 Step-by-step guides on web development, ceramic and engraving projects, and business optimization.
 
 ### 2.2. Industry Insights
+
 Analysis of trends in web design, ceramic 3d printing and engraving innovation, and small business strategy.
 
 ### 2.3. Project Showcases
+
 Behind-the-scenes looks at our latest projects and client success stories.
 
 ### 2.4. Tips & Tricks
+
 Practical advice for entrepreneurs, developers, and 3d printing enthusiasts.
+
+### 2.5 Guest Authors
+
+ALong with staffed writers. We have established relationships with writers in the field and some writers whom have stories we've found to be exciting.
 
 ## 3. Get Involved
 
 We'd love to hear from you! Whether you're interested in our services or just want to connect with like-minded professionals, don't hesitate to reach out.
 
-![Company Logo]({{ '/assets/img/icon3.png' | relative_url }})
+![Company Logo]({{ '/assets/img/logoIPM-5.png' | relative_url }})
 
 ---
 
-*Ready to take your business to the next level? [Contact us](#services) to learn how we can help you succeed at the speed of life.*
+*Ready to take your business to the next level? [Contact us](mailto#services) to learn how we can help you succeed at the speed of life.*
