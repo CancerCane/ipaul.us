@@ -46,11 +46,19 @@ Type: CNAME Name: www   Content: ipaul.us
 - [ ] Rocket Loader: Test before enabling
 - [ ] Polish: Lossy (for images)
 
+## Cloudflare Pages Deployment
+- ✅ **Project Created**: `ipaul-us` 
+- ✅ **Deployment URL**: https://a53a0433.ipaul-us.pages.dev
+- ✅ **Build Configuration**: Jekyll with `_build.sh`
+- ⚠️ **Custom Domain**: Needs to be configured in Cloudflare dashboard
+
 ## Files Updated for Domain
 - ✅ `CNAME` - Contains domain name
 - ✅ `_config.yml` - URL set to https://ipaul.us  
 - ✅ `package.json` - Homepage updated to https://ipaul.us
 - ✅ `robots.txt` - Created with sitemap reference
+- ✅ `wrangler.toml` - Cloudflare Pages configuration
+- ✅ `_build.sh` - Build script for Jekyll
 
 ## Testing Checklist
 - [ ] DNS propagation complete (use dig or nslookup)
