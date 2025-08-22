@@ -1,7 +1,7 @@
 {
   "name": "ipaul-media-system",
   "version": "1.2.2",
-  "homepage": "https://ipaulmedia.com",
+  "homepage": "https://ipaul.us",
   "license": "SEE LICENSE IN <License.txt>",
   "devDependencies": {
     "vite": "^5.2.11"
