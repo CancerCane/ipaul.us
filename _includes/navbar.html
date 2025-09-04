@@ -7,13 +7,18 @@
       <!-- Dropdown menu modal -->
       <div class="nav-dropdown-modal">
         <ul class="nav-menu">
-          <li><a href="{{ '/' | relative_url }}">Home</a></li>
-          <li><a href="{{ '/services/' | relative_url }}">Services</a></li>
-          <li><a href="{{ '/portfolio/' | relative_url }}">Portfolio</a></li>
-          <li><a href="{{ '/shop/' | relative_url }}">Shop</a></li>
-          <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
-          <li><a href="{{ '/about/' | relative_url }}">About</a></li>
-          <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
+          {% for item in site.data.navigation.main %}
+            <li>
+              <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
+              {% if item.submenu %}
+                <ul class="nav-submenu">
+                  {% for subitem in item.submenu %}
+                    <li><a href="{{ subitem.url | relative_url }}">{{ subitem.title }}</a></li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </li>
+          {% endfor %}
         </ul>
       </div>
     </div>

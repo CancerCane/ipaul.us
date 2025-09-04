@@ -650,6 +650,35 @@ footer::before {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
 }
 
+/* Submenu styles */
+.nav-submenu {
+  list-style: none;
+  padding-left: 20px;
+  margin: 5px 0 0 0;
+  display: none;
+}
+
+.nav-menu li:hover .nav-submenu {
+  display: block;
+}
+
+.nav-submenu li {
+  margin-bottom: 8px;
+}
+
+.nav-submenu a {
+  padding: 8px 15px;
+  font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.08);
+  border-left: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.nav-submenu a:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-left-color: #5e9693;
+  transform: translateX(3px);
+}
+
 /* Centered navbar brand */
 .navbar-brand {
   position: relative !important;
