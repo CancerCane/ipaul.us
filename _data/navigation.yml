@@ -9,6 +9,9 @@ main:
     url: /veterans/
   - title: Tools
     url: /tools/
+    submenu:
+      - title: Benefits Calculator
+        url: /benefits-calculator/
   - title: Shop
     url: /shop/
   - title: About

@@ -1,0 +1,301 @@
+<!-- _includes/benefits-calculator.html -->
+<div id="benefits-calculator" class="ipm-benefits-card">
+  <h2 class="ipm-title">VA Benefits Calculator (2025)</h2>
+
+  <div class="ipm-grid">
+    <div class="ipm-field">
+      <label for="ratings">Your ratings (%)</label>
+      <input id="ratings" type="text" placeholder="e.g. 70, 50, 10" />
+      <small>Comma-separated. We apply VA math and round to nearest 10.</small>
+    </div>
+
+    <div class="ipm-field">
+      <label>Dependents</label>
+      <div class="ipm-row">
+        <label><input id="hasSpouse" type="checkbox" /> Spouse</label>
+        <label><input id="spouseAA" type="checkbox" /> Spouse gets Aid &amp; Attendance</label>
+      </div>
+      <div class="ipm-row">
+        <label>Parents: <input id="numParents" type="number" min="0" max="2" value="0" class="ipm-num" /></label>
+      </div>
+      <div class="ipm-row">
+        <label>Children under 18: <input id="kidsU18" type="number" min="0" value="0" class="ipm-num" /></label>
+        <label>Children 18–24 in school: <input id="kids1824" type="number" min="0" value="0" class="ipm-num" /></label>
+      </div>
+    </div>
+  </div>
+
+  <details class="ipm-adv">
+    <summary>Advanced: Bilateral pairs (optional)</summary>
+    <small>Enter up to three left/right pairs (e.g., left leg/right leg). We add the 10% bilateral factor to each pair's combined value, then combine with other ratings.</small>
+    <div class="ipm-bilat-grid">
+      <div class="pair">
+        <label>Pair 1 L% <input id="bilat1L" type="number" min="0" max="100" class="ipm-num" /></label>
+        <label>R% <input id="bilat1R" type="number" min="0" max="100" class="ipm-num" /></label>
+      </div>
+      <div class="pair">
+        <label>Pair 2 L% <input id="bilat2L" type="number" min="0" max="100" class="ipm-num" /></label>
+        <label>R% <input id="bilat2R" type="number" min="0" max="100" class="ipm-num" /></label>
+      </div>
+      <div class="pair">
+        <label>Pair 3 L% <input id="bilat3L" type="number" min="0" max="100" class="ipm-num" /></label>
+        <label>R% <input id="bilat3R" type="number" min="0" max="100" class="ipm-num" /></label>
+      </div>
+      <div class="ipm-bnote" id="bilatNote"></div>
+    </div>
+  </details>
+
+  <details class="ipm-adv">
+    <summary>Optional Extras (manual $ add-ons)</summary>
+    <div class="ipm-row">
+      <label>SMC-K $ <input id="smcK" type="number" min="0" step="0.01" class="ipm-num" /></label>
+      <label>SMC-S $ <input id="smcS" type="number" min="0" step="0.01" class="ipm-num" /></label>
+      <label>Other $ <input id="otherAdds" type="number" min="0" step="0.01" class="ipm-num" /></label>
+    </div>
+    <small>Use these if you know your current SMC/other entitlements. They add on top of the base VA compensation.</small>
+  </details>
+
+  <div class="ipm-results">
+    <div><strong>Combined rating:</strong> <span id="combinedOut">—</span></div>
+    <div><strong>Base monthly rate:</strong> $<span id="baseOut">—</span></div>
+    <div class="ipm-subrow">
+      <span>+ Added for extra children:</span> $<span id="kidsExtraOut">0.00</span>
+      <span>+ Spouse A&amp;A:</span> $<span id="spouseAAOut">0.00</span>
+    </div>
+    <div class="ipm-subrow">
+      <span>+ SMC-K:</span> $<span id="smcKOut">0.00</span>
+      <span>+ SMC-S:</span> $<span id="smcSOut">0.00</span>
+      <span>+ Other:</span> $<span id="otherOut">0.00</span>
+    </div>
+    <hr/>
+    <div class="ipm-total"><strong>Total monthly (est.):</strong> $<span id="totalOut">—</span></div>
+    <div class="ipm-foot">
+      <span>Rates year: 2025 (effective 2024‑12‑01)</span>
+      <button id="printSummary" class="ipm-btn">Print Summary</button>
+    </div>
+    <p class="ipm-note">Quick estimator for standard VA compensation. Advanced toggles: Bilateral factor (manual pairs). SMC amounts are user-specified. Always verify on VA.gov.</p>
+  </div>
+
+  <!-- Preferred: load from _data -->
+  <script type="application/json" id="va-rates-2025">{{ site.data.va_rates_2025 | jsonify }}</script>
+  <!-- Fallback inline JSON if data missing -->
+  <script type="application/json" id="va-rates-inline-default">{"meta": {"effective_date": "2024-12-01", "year": 2025, "source": "https://www.va.gov/disability/compensation-rates/veteran-rates/"}, "ten_twenty": {"10": 175.51, "20": 346.95}, "added_amounts": {"30": {"child_u18": 31.0, "schoolchild_18_24": 102.0, "spouse_aa": 58.0}, "40": {"child_u18": 42.0, "schoolchild_18_24": 137.0, "spouse_aa": 78.0}, "50": {"child_u18": 53.0, "schoolchild_18_24": 171.0, "spouse_aa": 98.0}, "60": {"child_u18": 63.0, "schoolchild_18_24": 205.0, "spouse_aa": 117.0}, "70": {"child_u18": 74.0, "schoolchild_18_24": 239.0, "spouse_aa": 137.0}, "80": {"child_u18": 84.0, "schoolchild_18_24": 274.0, "spouse_aa": 157.0}, "90": {"child_u18": 95.0, "schoolchild_18_24": 308.0, "spouse_aa": 176.0}, "100": {"child_u18": 106.14, "schoolchild_18_24": 342.85, "spouse_aa": 195.92}}, "no_children": {"veteran_alone": {"30": 537.42, "40": 774.16, "50": 1102.04, "60": 1395.93, "70": 1759.19, "80": 2044.89, "90": 2297.96, "100": 3831.3}, "spouse": {"30": 601.42, "40": 859.16, "50": 1208.04, "60": 1523.93, "70": 1908.19, "80": 2214.89, "90": 2489.96, "100": 4044.91}, "spouse_one_parent": {"30": 652.42, "40": 927.16, "50": 1293.04, "60": 1625.93, "70": 2028.19, "80": 2351.89, "90": 2643.96, "100": 4216.35}, "spouse_two_parents": {"30": 703.42, "40": 995.16, "50": 1378.04, "60": 1727.93, "70": 2148.19, "80": 2488.89, "90": 2797.96, "100": 4387.79}, "one_parent": {"30": 588.42, "40": 842.16, "50": 1187.04, "60": 1497.93, "70": 1879.19, "80": 2181.89, "90": 2451.96, "100": 4002.74}, "two_parents": {"30": 639.42, "40": 910.16, "50": 1272.04, "60": 1599.93, "70": 1999.19, "80": 2318.89, "90": 2605.96, "100": 4174.18}}, "with_children": {"child_only": {"30": 579.42, "40": 831.16, "50": 1173.04, "60": 1480.93, "70": 1858.19, "80": 2158.89, "90": 2425.96, "100": 3974.15}, "spouse_child": {"30": 648.42, "40": 922.16, "50": 1287.04, "60": 1617.93, "70": 2018.19, "80": 2340.89, "90": 2630.96, "100": 4201.35}, "spouse_one_parent_child": {"30": 699.42, "40": 990.16, "50": 1372.04, "60": 1719.93, "70": 2138.19, "80": 2477.89, "90": 2784.96, "100": 4372.79}, "spouse_two_parents_child": {"30": 750.42, "40": 1058.16, "50": 1457.04, "60": 1821.93, "70": 2258.19, "80": 2614.89, "90": 2938.96, "100": 4544.23}, "one_parent_child": {"30": 630.42, "40": 899.16, "50": 1258.04, "60": 1582.93, "70": 1978.19, "80": 2295.89, "90": 2579.96, "100": 4145.59}, "two_parents_child": {"30": 681.42, "40": 967.16, "50": 1343.04, "60": 1684.93, "70": 2098.19, "80": 2432.89, "90": 2733.96, "100": 4317.03}}}</script>
+
+  <script>
+  (function() {
+    const $ = (sel) => document.querySelector(sel);
+    const fmt = (n) => (isNaN(n) ? '—' : n.toFixed(2));
+
+    function parseRates() {
+      try {
+        const rawPref = document.getElementById('va-rates-2025')?.textContent?.trim();
+        if (rawPref && rawPref !== 'null' && rawPref !== '') {
+          return JSON.parse(rawPref);
+        }
+      } catch(e) { /* ignore and fall back */ }
+      try {
+        const raw = document.getElementById('va-rates-inline-default').textContent;
+        return JSON.parse(raw);
+      } catch (e) {
+        console.error('Rates JSON parse error', e);
+        return null;
+      }
+    }
+
+    function combineRatings(percs) {
+      if (!percs.length) return 0;
+      const nums = percs.map(p => parseFloat(String(p).trim())).filter(p => !isNaN(p) && p > 0).sort((a,b) => b - a);
+      let remaining = 100.0;
+      for (const p of nums) remaining = remaining * (1 - (p/100));
+      let combined = 100 - remaining;
+      const rounded = Math.round(combined / 10) * 10;
+      return Math.max(0, Math.min(100, rounded));
+    }
+
+    function combineTwoRaw(a, b) {
+      const A = Math.max(0, Math.min(100, parseFloat(a) || 0));
+      const B = Math.max(0, Math.min(100, parseFloat(b) || 0));
+      const remaining = 100 * (1 - A/100) * (1 - B/100);
+      return 100 - remaining;
+    }
+
+    function getBaseAmount(rates, rating, dep) {
+      if (rating === 10 || rating === 20) return rates.ten_twenty[String(rating)] || 0;
+
+      const totalKids = dep.kidsU18 + dep.kids1824;
+      const keyRating = String(rating);
+
+      if (totalKids >= 1) {
+        let rowKey = 'child_only';
+        if (dep.hasSpouse && dep.numParents === 0) rowKey = 'spouse_child';
+        else if (dep.hasSpouse && dep.numParents === 1) rowKey = 'spouse_one_parent_child';
+        else if (dep.hasSpouse && dep.numParents === 2) rowKey = 'spouse_two_parents_child';
+        else if (!dep.hasSpouse && dep.numParents === 1) rowKey = 'one_parent_child';
+        else if (!dep.hasSpouse && dep.numParents === 2) rowKey = 'two_parents_child';
+        const base = rates.with_children[rowKey]?.[keyRating];
+        return base ?? 0;
+      } else {
+        let rowKey = 'veteran_alone';
+        if (dep.hasSpouse && dep.numParents === 0) rowKey = 'spouse';
+        else if (dep.hasSpouse && dep.numParents === 1) rowKey = 'spouse_one_parent';
+        else if (dep.hasSpouse && dep.numParents === 2) rowKey = 'spouse_two_parents';
+        else if (!dep.hasSpouse && dep.numParents === 1) rowKey = 'one_parent';
+        else if (!dep.hasSpouse && dep.numParents === 2) rowKey = 'two_parents';
+        const base = rates.no_children[rowKey]?.[keyRating];
+        return base ?? 0;
+      }
+    }
+
+    function getAddedAmounts(rates, rating, dep) {
+      if (rating === 10 || rating === 20) return { kidsExtra: 0, spouseAA: 0 };
+      const aa = rates.added_amounts[String(rating)] || { child_u18:0, schoolchild_18_24:0, spouse_aa: 0 };
+      const totalKids = dep.kidsU18 + dep.kids1824;
+      let kidsExtra = 0;
+      if (totalKids >= 1) {
+        const extraUnder18 = Math.max(0, dep.kidsU18 - 1);
+        const extraSchool = dep.kids1824;
+        kidsExtra = extraUnder18 * aa.child_u18 + extraSchool * aa.schoolchild_18_24;
+      }
+      const spouseAA = (dep.hasSpouse && dep.spouseAA) ? aa.spouse_aa : 0;
+      return { kidsExtra, spouseAA };
+    }
+
+    function readBilaterals() {
+      const get = (id) => parseFloat(document.getElementById(id)?.value || '0') || 0;
+      const pairs = [
+        [get('bilat1L'), get('bilat1R')],
+        [get('bilat2L'), get('bilat2R')],
+        [get('bilat3L'), get('bilat3R')],
+      ];
+      const out = [];
+      const notes = [];
+      pairs.forEach((pr, idx) => {
+        const L = pr[0], R = pr[1];
+        if (L>0 && R>0) {
+          const pairRaw = combineTwoRaw(L,R);
+          const withBF = Math.min(100, pairRaw * 1.10);
+          out.push(withBF);
+          notes.push(`Pair ${idx+1}: raw {${L}%, ${R}%} → combined ${pairRaw.toFixed(2)}% (+10% BF) → ${withBF.toFixed(2)}%`);
+        }
+      });
+      const noteEl = document.getElementById('bilatNote');
+      if (noteEl) noteEl.textContent = notes.join(' | ');
+      return out;
+    }
+
+    function recalc() {
+      const rates = parseRates();
+      if (!rates) return;
+
+      const ratingsStr = document.getElementById('ratings').value || '';
+      const percs = ratingsStr.split(',').map(s => s.trim()).filter(Boolean).map(x => parseFloat(x));
+      const bilats = readBilaterals();
+
+      const allRatings = []
+        .concat(percs.filter(x => !isNaN(x) && x>0))
+        .concat(bilats);
+
+      const combined = combineRatings(allRatings);
+      document.getElementById('combinedOut').textContent = combined ? (combined + '%') : '0%';
+
+      const dep = {
+        hasSpouse: document.getElementById('hasSpouse').checked,
+        spouseAA: document.getElementById('spouseAA').checked,
+        numParents: Math.max(0, Math.min(2, parseInt(document.getElementById('numParents').value || '0', 10))),
+        kidsU18: Math.max(0, parseInt(document.getElementById('kidsU18').value || '0', 10)),
+        kids1824: Math.max(0, parseInt(document.getElementById('kids1824').value || '0', 10))
+      };
+
+      const base = getBaseAmount(rates, combined, dep);
+      document.getElementById('baseOut').textContent = fmt(base);
+
+      const add = getAddedAmounts(rates, combined, dep);
+      document.getElementById('kidsExtraOut').textContent = fmt(add.kidsExtra);
+      document.getElementById('spouseAAOut').textContent = fmt(add.spouseAA);
+
+      const smcK = parseFloat(document.getElementById('smcK')?.value || '0') || 0;
+      const smcS = parseFloat(document.getElementById('smcS')?.value || '0') || 0;
+      const otherAdds = parseFloat(document.getElementById('otherAdds')?.value || '0') || 0;
+      document.getElementById('smcKOut').textContent = fmt(smcK);
+      document.getElementById('smcSOut').textContent = fmt(smcS);
+      document.getElementById('otherOut').textContent = fmt(otherAdds);
+
+      const total = (base || 0) + add.kidsExtra + add.spouseAA + smcK + smcS + otherAdds;
+      document.getElementById('totalOut').textContent = fmt(total);
+    }
+
+    function printSummary() {
+      const content = `
+        <html>
+        <head><title>Benefits Summary</title>
+        <style>
+          body {{ font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; padding: 24px; }}
+          h1 {{ margin: 0 0 8px; }}
+          .row {{ margin: 6px 0; }}
+        </style>
+        </head>
+        <body>
+          <h1>Benefits Summary (2025)</h1>
+          <div class="row"><strong>Combined rating:</strong> ${document.getElementById('combinedOut').textContent}</div>
+          <div class="row"><strong>Base monthly:</strong> $${document.getElementById('baseOut').textContent}</div>
+          <div class="row"><strong>Extras:</strong>
+            Kids $${document.getElementById('kidsExtraOut').textContent},
+            Spouse A&A $${document.getElementById('spouseAAOut').textContent},
+            SMC-K $${document.getElementById('smcKOut').textContent},
+            SMC-S $${document.getElementById('smcSOut').textContent},
+            Other $${document.getElementById('otherOut').textContent}
+          </div>
+          <hr/>
+          <div class="row"><strong>Total monthly (est.):</strong> $${document.getElementById('totalOut').textContent}</div>
+          <p style="margin-top:16px;font-size:12px;opacity:.75">Rates year 2025 (effective 2024‑12‑01). This is an estimator; verify on VA.gov.</p>
+          <script>window.onload = () => window.print();</script>
+        </body>
+        </html>`;
+      const w = window.open('', '_blank');
+      w.document.open();
+      w.document.write(content);
+      w.document.close();
+    }
+
+    ['ratings','hasSpouse','spouseAA','numParents','kidsU18','kids1824','smcK','smcS','otherAdds','bilat1L','bilat1R','bilat2L','bilat2R','bilat3L','bilat3R'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) { el.addEventListener('input', recalc); el.addEventListener('change', recalc); }
+    });
+    document.getElementById('printSummary').addEventListener('click', printSummary);
+    recalc();
+  })();
+  </script>
+
+  <style>
+    /* iPaul skin */
+    #benefits-calculator.ipm-benefits-card {
+      border: 1px solid rgba(123,30,63,0.4);
+      border-radius: 14px;
+      padding: 1rem;
+      background: linear-gradient(180deg, rgba(123,30,63,.05), rgba(0,0,0,.02));
+      box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+      max-width: 980px;
+    }
+    #benefits-calculator .ipm-title { color: #D4AF37; margin: 0 0 0.5rem; }
+    #benefits-calculator .ipm-grid { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+    @media (min-width: 740px) { #benefits-calculator .ipm-grid { grid-template-columns: 1fr 1fr; } }
+    #benefits-calculator .ipm-field label { font-weight: 700; display: block; margin-bottom: 0.25rem; }
+    #benefits-calculator .ipm-field input[type="text"] {
+      width: 100%; padding: 0.5rem; border: 1px solid rgba(0,0,0,0.2); border-radius: 10px;
+    }
+    #benefits-calculator .ipm-row { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; margin: 0.25rem 0; }
+    #benefits-calculator .ipm-num { width: 6.25rem; padding: 0.35rem 0.5rem; border: 1px solid rgba(0,0,0,0.2); border-radius: 8px; }
+    #benefits-calculator .ipm-results { margin-top: 1rem; background: rgba(0,0,0,0.03); border: 1px dashed rgba(0,0,0,0.15); border-radius: 12px; padding: 0.75rem; line-height: 1.7; }
+    #benefits-calculator .ipm-subrow { display: flex; gap: 1rem; flex-wrap: wrap; font-size: 0.95rem; opacity: 0.95; }
+    #benefits-calculator .ipm-total { font-size: 1.25rem; color:#7B1E3F; font-weight: 800; }
+    #benefits-calculator .ipm-foot { display:flex; align-items:center; justify-content:space-between; gap:.75rem; margin-top:.5rem; }
+    #benefits-calculator .ipm-btn { background:#7B1E3F; color:white; border:none; border-radius:10px; padding:.4rem .7rem; cursor:pointer; }
+    #benefits-calculator .ipm-adv { margin-top: .75rem; }
+    #benefits-calculator .ipm-adv summary { cursor:pointer; color:#7B1E3F; font-weight:700; }
+    #benefits-calculator .ipm-bilat-grid { display:grid; grid-template-columns: 1fr; gap:.5rem; padding:.5rem 0; }
+    @media (min-width:720px) { #benefits-calculator .ipm-bilat-grid { grid-template-columns: 1fr 1fr 1fr; } }
+    #benefits-calculator .ipm-bilat-grid .pair { display:flex; gap:.5rem; align-items:center; }
+    #benefits-calculator .ipm-bnote { font-size: .85rem; opacity:.8; grid-column:1 / -1; }
+    #benefits-calculator .ipm-note { font-size: 0.85rem; opacity: 0.85; margin: 0.5rem 0 0; }
+  </style>
+</div>
