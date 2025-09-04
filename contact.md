@@ -16,16 +16,20 @@ subtitle: Tell us what you're working on. We'll reply within 1-2 business days.
 
     <!-- Form Container -->
     <div class="contact-form-container">
-  <!-- Netlify Forms - FREE tier includes 100 submissions/month -->
-  <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" action="/thank-you">
-
-    <!-- Honeypot field for spam protection (hidden from users) -->
-    <p class="hidden" style="display:none !important">
-      <label>Don't fill this out if you're human: <input name="bot-field" /></label>
-    </p>
+  <!-- Web3Forms Configuration -->
+  <form action="https://api.web3forms.com/submit" method="POST">
     
-    <!-- Hidden field to identify the form -->
-    <input type="hidden" name="form-name" value="contact">
+    <!-- Web3Forms Access Key -->
+    <input type="hidden" name="access_key" value="c3be350f-51b7-4ee6-ac2a-797734179afe">
+    
+    <!-- Redirect after submission -->
+    <input type="hidden" name="redirect" value="https://ipaul.us/thank-you">
+    
+    <!-- Email Subject Line -->
+    <input type="hidden" name="subject" value="New Contact Form Submission - iPaul Media">
+    
+    <!-- From Name for the email -->
+    <input type="hidden" name="from_name" value="iPaul Media Website">
     
     <!-- Two column layout for name fields -->
     <div class="form-row">
@@ -88,6 +92,9 @@ subtitle: Tell us what you're working on. We'll reply within 1-2 business days.
         I have read and agree to the <a href="/privacy-policy" target="_blank">Privacy Policy</a> and <a href="/cookie-policy" target="_blank">Cookie Policy</a>
       </label>
     </div>
+
+    <!-- Web3Forms Honeypot Spam Protection -->
+    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
     <input type="submit" value="Send Message">
 
