@@ -12,13 +12,13 @@ title: Home
           iPaul Media.
         </h1>
         <p class="hero-description">
-          Veteran-owned creative studio bringing your vision to life with custom design, 
+          Veteran-owned creative studio bringing your vision to life with custom design,
           web development, and maker services.
         </p>
         <p class="hero-tagline">
           From concept to creation — we build what works.
         </p>
-        <h4 class="hero-subtitle">Doing business at the speed of life.</h4>
+        <h4 class="hero-subtitle">Purpose driven business.</h4>
         <a class="btn btn-outline-light btn-lg hero-cta" href="#services" role="button">
           View Our Services
         </a>
@@ -34,7 +34,7 @@ title: Home
       <h1 class="services-title">Our Services</h1>
     </div>
     <div class="grid-container">
-      
+
       {% include service-card.html 
          title="Branding & Graphic Design"
          description="Logo suite, color systems, brand guides, and complete visual identity packages."

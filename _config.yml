@@ -38,12 +38,12 @@ defaults:
       path: ""
       type: "pages"
     values:
-      layout: 
-        #image: "/assets/img/logoIPM.png"
+      layout: "default"
+      #image: "/assets/img/logoIPM.png"
 
 
 # Social / Contact
-email: "lpaul@ipaul.us"
+contact_email: "lpaul@ipaul.us"
 location: "Dallas, Tx (Deep Ellum)"
 
 # SEO

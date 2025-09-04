@@ -1,10 +1,8 @@
-brand:
-  tagline: "Create. Launch. Grow."
+- tagline: "Create. Launch. Grow."
   badges: ["Veteran‑Owned", "Dallas, TX", "Fast, secure hosting", "Real support"]
   colors:
     burgundy: "#7B1E3F"
     gold: "#D4AF37"
     black: "#111111"
     wheat: "#F2E8D5"
-new_brand:
-  new_tagline: "New tagline"
+- tagline: "New tagline"
