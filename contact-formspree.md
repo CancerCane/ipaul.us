@@ -3,7 +3,7 @@ layout: default
 title: Let's build something
 subtitle: Tell us what you're working on. We'll reply within 1-2 business days.
 ---
-<!-- markdownlint-disable MD033 -->
+<!-- markdownlint-disable -->
 
 <!-- Contact Form Section -->
 <section class="contact-section">

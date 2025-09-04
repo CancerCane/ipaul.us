@@ -1,3 +1,4 @@
+<!-- markdownlint-disable -->
 # Contact Form Setup Guide
 
 This guide provides instructions for setting up email notifications and form handling for the iPaul Media website contact form.

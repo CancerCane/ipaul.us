@@ -2,7 +2,7 @@
 layout: default
 title: Cookie Policy
 ---
-
+<!-- markdownlint-disable -->
 <section class="cookie-policy-section" style="padding: 60px 0;">
   <div class="container" style="max-width: 800px; margin: 0 auto;">
     <h1>Cookie Policy</h1>

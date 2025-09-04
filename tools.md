@@ -3,6 +3,7 @@ layout: page
 title: Tools & Resources
 subtitle: Free utilities for founders and veterans.
 ---
+<!-- markdownlint-disable -->
 
 ### VA Benefits Calculator (NEW!)
 

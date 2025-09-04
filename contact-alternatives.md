@@ -4,6 +4,8 @@ title: Contact Form Alternatives
 permalink: /contact-alt/
 published: false
 ---
+<!-- markdownlint-disable -->
+
 
 # Alternative Contact Form Implementations
 

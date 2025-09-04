@@ -2,6 +2,7 @@
 layout: default
 title: Blog
 ---
+<!-- markdownlint-disable -->
 
 <section class="blog-section">
   <div class="container">

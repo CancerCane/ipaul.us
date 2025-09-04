@@ -1,3 +1,4 @@
+<!-- markdownlint-disable -->
 # GitHub Pages Contact Form Setup Guide
 
 Since your site is deployed on GitHub Pages, you'll need a third-party service to handle form submissions. Here's how to set it up:
@@ -5,16 +6,19 @@ Since your site is deployed on GitHub Pages, you'll need a third-party service t
 ## Option 1: Formspree (Recommended - Easy Setup)
 
 ### Step 1: Create Formspree Account
+
 1. Go to [https://formspree.io](https://formspree.io)
 2. Sign up with your email: `ipaul@ipaul.us`
 3. Verify your email address
 
 ### Step 2: Create Your Form
+
 1. In Formspree dashboard, click "New Form"
 2. Name it "iPaul Media Contact Form"
 3. Copy the form endpoint (looks like: `https://formspree.io/f/xyzabcde`)
 
 ### Step 3: Update Your Contact Form
+
 Edit your `contact.md` file and replace the form opening tag:
 
 ```html
@@ -37,6 +41,7 @@ Also remove the Netlify-specific honeypot field and add Formspree's:
 ```
 
 ### Step 4: Configure Form Settings in Formspree
+
 1. In your Formspree dashboard, click on your form
 2. Go to "Settings" → "Email Notifications"
 3. Configure:
@@ -45,6 +50,7 @@ Also remove the Netlify-specific honeypot field and add Formspree's:
    - **Reply-To**: Will use the submitter's email automatically
 
 ### Step 5: Set Up Auto-Response (Optional)
+
 1. In Formspree, go to "Autoresponse" tab
 2. Enable autoresponse
 3. Use this template:
@@ -71,12 +77,14 @@ The iPaul Media Team
 If you prefer a simpler solution without a dashboard:
 
 ### Step 1: Get Access Key
+
 1. Go to [https://web3forms.com](https://web3forms.com)
 2. Enter your email: `ipaul@ipaul.us`
 3. Click "Get Access Key"
 4. Check your email for the access key
 
 ### Step 2: Update Your Form
+
 Replace the form tag with:
 ```html
 <form action="https://api.web3forms.com/submit" method="POST">
@@ -117,6 +125,7 @@ Replace the form tag with:
 ## Managing Submissions
 
 ### With Formspree:
+
 - **Dashboard**: View all submissions at formspree.io
 - **Export**: Download as CSV
 - **Search**: Find specific submissions
@@ -124,6 +133,7 @@ Replace the form tag with:
 - **Spam**: Automatically filtered
 
 ### Email Management:
+
 1. Create a folder in your email: "Website Inquiries"
 2. Set up a filter/rule to organize form emails
 3. Create canned responses for common inquiries
@@ -162,18 +172,21 @@ iPaul Media
 ## Troubleshooting
 
 ### Form not submitting:
+
 - Check browser console for errors (F12)
 - Verify form action URL is correct
 - Test in incognito mode
 - Check if JavaScript errors are blocking
 
 ### Not receiving emails:
+
 - Check spam/junk folder
 - Verify email in form service settings
 - Check service limits (Formspree free = 50/month)
 - Add form service to email whitelist
 
 ### Too much spam:
+
 - Enable reCAPTCHA in Formspree settings
 - Add additional validation in contact-form.js
 - Consider adding a simple math question

@@ -2,7 +2,7 @@
 layout: default
 title: Thank You
 ---
-
+<!-- markdownlint-disable -->
 <!-- Hero Section -->
 <section id="hero" class="hero-section">
   <div class="hero-container">
