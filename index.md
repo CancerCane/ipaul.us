@@ -96,4 +96,5 @@ title: Home
          cta_text="Start Custom Order" %}
 
     </div>
+  </div>
 </section>
