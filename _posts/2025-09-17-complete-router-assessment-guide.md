@@ -322,7 +322,7 @@ Remember: Finding vulnerabilities isn't failure - it's the first step to securit
 
 ---
 
-*Ready to assess your router? Download the [complete script collection](https://github.com/yourusername/router-security-scripts) and join the discussion in the comments. What vulnerabilities did you find?*
+*Ready to assess your router? Download the [complete script collection](https://github.com/CancerCane/router-security-toolkit) and join the discussion in the comments. What vulnerabilities did you find?*
 
 **Previous**: [Finding Critical Vulnerabilities](/security/2025/09/16/router-vulnerabilities-shock-moment.html)
 **Next**: Router Hardening: From Vulnerable to Secure (Coming Soon)

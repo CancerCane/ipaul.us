@@ -122,8 +122,8 @@ Ready to assess your own router? Here's how to begin:
 
 ## Resources and Next Steps
 
-- Download my [Warp Security Notebook](https://github.com/yourusername/security-notebooks)
-- Read the [Complete Assessment Guide](/security/2025/09/16/complete-router-assessment-guide.html)
+- Download my [Router Security Toolkit](https://github.com/CancerCane/router-security-toolkit)
+- Read the [Complete Assessment Guide](/security/2025/09/17/complete-router-assessment-guide.html)
 - Join the [Warp Community](https://www.warp.dev/community) for security discussions
 
 ## Conclusion: Security Education, Reimagined
