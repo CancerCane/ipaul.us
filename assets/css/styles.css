@@ -398,6 +398,160 @@ h1, h2, h3, h4, h5, h6 {
   color: #ffffff;
 }
 
+/* Parallax Hero Section */
+.parallax-hero {
+  position: relative;
+  height: 500px;
+  min-height: 400px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-top: 60px; /* Account for fixed navbar */
+}
+
+.parallax-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  z-index: 1;
+}
+
+.parallax-title {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation: fadeInUp 1s ease;
+}
+
+.parallax-subtitle {
+  font-size: 1.5rem;
+  color: #e0e0e0;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  animation: fadeInUp 1s ease 0.2s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile responsive parallax */
+@media (max-width: 768px) {
+  .parallax-hero {
+    height: 350px;
+    min-height: 300px;
+    background-attachment: scroll; /* Fix iOS parallax issue */
+  }
+  
+  .parallax-title {
+    font-size: 2.5rem;
+  }
+  
+  .parallax-subtitle {
+    font-size: 1.2rem;
+  }
+}
+
+/* Process Section */
+.process-section {
+  padding: 80px 0;
+  background-color: #0a0a0a;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 3rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #b0b0b0;
+  margin-bottom: 3rem;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.process-step {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(20, 20, 20, 0.5);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.process-step:hover {
+  transform: translateY(-5px);
+  background: rgba(30, 30, 30, 0.8);
+  border-color: #64b5f6;
+  box-shadow: 0 10px 30px rgba(100, 181, 246, 0.2);
+}
+
+.step-number {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #64b5f6;
+  margin-bottom: 1rem;
+  font-family: 'Courier New', monospace;
+}
+
+.process-step h3 {
+  color: #ffffff;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.process-step p {
+  color: #b0b0b0;
+  line-height: 1.6;
+}
+
+/* Ensure proper stacking order for sections */
+main > section,
+main > div {
+  position: relative;
+  z-index: 1;
+}
+
+/* Services gallery specific fixes */
+.services-gallery {
+  position: relative;
+  z-index: 2;
+}
+
 p, li, span, div, a {
   color: #e0e0e0;
 }

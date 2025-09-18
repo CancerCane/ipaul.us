@@ -5,7 +5,7 @@ permalink: /services/
 ---
 <!-- markdownlint-disable -->
 <!-- Parallax Hero Section -->
-<div class="parallax-hero" data-parallax="scroll" data-image-src="{{ '/assets/img/logoIPM-5.png' | relative_url }}">
+<div class="parallax-hero" style="background-image: url('{{ '/assets/img/logoIPM-5.png' | relative_url }}');">
   <div class="parallax-overlay">
     <h1 class="parallax-title">Our Services</h1>
     <p class="parallax-subtitle">Comprehensive Solutions for Your Digital Success</p>
