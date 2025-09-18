@@ -5,7 +5,7 @@ permalink: /portfolio-gallery/
 ---
 <!-- markdownlint-disable -->
 <!-- Parallax Hero Section -->
-<div class="parallax-hero" data-parallax="scroll" data-image-src="{{ '/assets/img/logoIPM-5.png' | relative_url }}">
+<div class="parallax-hero" style="background-image: url('{{ '/assets/img/logoIPM-5.png' | relative_url }}');">
   <div class="parallax-overlay">
     <h1 class="parallax-title">Creative Portfolio</h1>
     <p class="parallax-subtitle">Exploring Design, Branding & Digital Innovation</p>
@@ -163,7 +163,7 @@ permalink: /portfolio-gallery/
 </section>
 
 <!-- Parallax Section 1 -->
-<div class="parallax-section" data-parallax="scroll" data-image-src="{{ '/assets/img/bgblue01.jpg' | relative_url }}">
+<div class="parallax-section" style="background-image: url('{{ '/assets/img/bgblue01.jpg' | relative_url }}');">
   <div class="parallax-content">
     <h2>Design Philosophy</h2>
     <p>Every project begins with understanding the story behind the brand. We believe in creating visual identities that resonate with purpose and authenticity.</p>
@@ -200,7 +200,7 @@ permalink: /portfolio-gallery/
 </section>
 
 <!-- Parallax Section 2 -->
-<div class="parallax-section" data-parallax="scroll" data-image-src="{{ '/assets/img/theflag.png' | relative_url }}">
+<div class="parallax-section" style="background-image: url('{{ '/assets/img/theflag.png' | relative_url }}');">
   <div class="parallax-content">
     <h2>Veteran-Owned Creative Studio</h2>
     <p>Bringing military precision and creative excellence to every project. Honor, integrity, and dedication drive our work.</p>
@@ -293,6 +293,8 @@ permalink: /portfolio-gallery/
 .portfolio-gallery {
   padding: 80px 0;
   background-color: #0a0a0a;
+  position: relative;
+  z-index: 10;
 }
 
 .gallery-title {
@@ -313,6 +315,13 @@ permalink: /portfolio-gallery/
 .gallery-item {
   perspective: 1000px;
   height: 400px;
+  position: relative;
+  z-index: 1;
+  transition: z-index 0.3s;
+}
+
+.gallery-item:hover {
+  z-index: 20;
 }
 
 .gallery-card {
@@ -448,6 +457,8 @@ permalink: /portfolio-gallery/
   align-items: center;
   justify-content: center;
   position: relative;
+  z-index: 5;
+  margin: 80px 0;
 }
 
 .parallax-content {
@@ -476,6 +487,8 @@ permalink: /portfolio-gallery/
 .process-section {
   padding: 80px 0;
   background-color: #0a0a0a;
+  position: relative;
+  z-index: 10;
 }
 
 .process-grid {
@@ -694,17 +707,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
   
-  // Simple parallax effect
-  window.addEventListener('scroll', function() {
-    const scrolled = window.pageYOffset;
-    const parallaxElements = document.querySelectorAll('[data-parallax="scroll"]');
-    
-    parallaxElements.forEach(element => {
-      const speed = 0.5;
-      const yPos = -(scrolled * speed);
-      element.style.transform = `translateY(${yPos}px)`;
-    });
-  });
+  // Remove parallax transform effect that causes overlap
+  // The CSS background-attachment: fixed is sufficient for parallax
   
   // Reveal animations
   const observerOptions = {

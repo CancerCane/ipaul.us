@@ -552,6 +552,25 @@ main > div {
   z-index: 2;
 }
 
+/* Fix for parallax sections overlap */
+.parallax-section {
+  position: relative;
+  z-index: 1;
+  margin: 80px 0;
+  overflow: hidden;
+}
+
+/* Ensure flip cards don't get cut off */
+.gallery-grid {
+  position: relative;
+  z-index: 1;
+  overflow: visible;
+}
+
+.gallery-item:hover {
+  z-index: 100;
+}
+
 p, li, span, div, a {
   color: #e0e0e0;
 }
