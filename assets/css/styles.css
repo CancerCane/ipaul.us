@@ -77,10 +77,8 @@ body {
 .navbar-brand {
   font-size: 2.75rem;
   letter-spacing: 3px;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   margin: 0;
+  /* Let MDB's mx-auto class handle centering */
 }
 
 /* Enhanced navbar scrolled state for dark theme */
@@ -949,12 +947,23 @@ footer::before {
   transform: translateX(3px);
 }
 
-/* Centered navbar brand */
+/* Navbar brand styling */
 .navbar-brand {
-  position: relative !important;
-  transform: none !important;
-  margin: 0 auto;
   color: #faf9f9;
+  flex: 0 0 auto;
+}
+
+/* Ensure proper flexbox layout for navbar */
+.navbar .container-fluid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Make icon wrapper and spacer equal width for centering */
+.nav-icon-wrapper,
+.navbar .container-fluid > div:last-child {
+  flex: 0 0 40px;
 }
 
 /* Responsive adjustments */
