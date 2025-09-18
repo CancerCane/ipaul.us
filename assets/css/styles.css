@@ -77,14 +77,18 @@ body {
 .navbar-brand {
   font-size: 2.75rem;
   letter-spacing: 3px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0;
 }
 
-/* Enhanced navbar scrolled state with better contrast */
+/* Enhanced navbar scrolled state for dark theme */
 .navbar-scrolled {
-  background-color: rgba(0, 0, 64, 0.85) !important;
+  background-color: rgba(10, 10, 10, 0.95) !important;
   backdrop-filter: blur(15px) !important;
   -webkit-backdrop-filter: blur(15px) !important;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5) !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 
@@ -188,7 +192,273 @@ body {
 body {
   width: 100%;
   overflow-x: hidden;
+  background-color: #0a0a0a;
+  color: #e0e0e0;
   /* Remove padding-top to allow hero section to be full height */
+}
+
+/* Global text colors for dark theme */
+h1, h2, h3, h4, h5, h6 {
+  color: #ffffff !important;
+}
+
+/* Portfolio Modal Styles */
+.portfolio-modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.portfolio-modal-content {
+  background-color: #1a1a1a;
+  margin: 5% auto;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  width: 90%;
+  max-width: 1000px;
+  border-radius: 20px;
+  overflow: hidden;
+  animation: modalSlideIn 0.5s ease;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-100px) scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.close-portfolio-modal {
+  position: absolute;
+  right: 25px;
+  top: 15px;
+  color: #ffffff;
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.close-portfolio-modal:hover {
+  color: #64b5f6;
+  background-color: rgba(0, 0, 0, 0.8);
+  transform: rotate(90deg);
+}
+
+.portfolio-modal-body {
+  padding: 3rem;
+  position: relative;
+}
+
+.portfolio-modal-body h2 {
+  color: #ffffff;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.modal-category {
+  color: #64b5f6;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.modal-image-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.modal-gallery-image {
+  width: 100%;
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.modal-gallery-image:hover {
+  border-color: #64b5f6;
+  transform: scale(1.02);
+}
+
+.modal-description {
+  color: #e0e0e0;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.modal-project-details {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-project-details h4 {
+  color: #64b5f6;
+  font-size: 1.3rem;
+  margin: 1.5rem 0 0.8rem;
+}
+
+.modal-project-details p {
+  color: #b0b0b0;
+  margin-bottom: 1rem;
+}
+
+.modal-project-details ul {
+  list-style: none;
+  padding: 0;
+}
+
+.modal-project-details li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  color: #e0e0e0;
+}
+
+.modal-project-details li:before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: #64b5f6;
+}
+
+/* Make portfolio cards clickable */
+.portfolio-item[data-project] {
+  cursor: pointer;
+}
+
+.portfolio-item[data-project] .btn {
+  pointer-events: none;
+}
+
+/* Service Modal Content Styling */
+.service-modal-content h3 {
+  color: #64b5f6;
+  font-size: 1.8rem;
+  margin: 2rem 0 1rem;
+}
+
+.service-modal-content h4 {
+  color: #ffffff;
+  font-size: 1.4rem;
+  margin: 1.5rem 0 1rem;
+}
+
+.service-modal-content p {
+  color: #e0e0e0;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.service-modal-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.service-modal-content li {
+  padding: 0.8rem 0;
+  padding-left: 2rem;
+  position: relative;
+  color: #e0e0e0;
+  line-height: 1.6;
+}
+
+.service-modal-content li:before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #64b5f6;
+  font-weight: bold;
+}
+
+.service-modal-content strong {
+  color: #ffffff;
+}
+
+p, li, span, div, a {
+  color: #e0e0e0;
+}
+
+#about {
+  color: #e0e0e0;
+}
+
+
+a {
+  color: #64b5f6;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #90caf9;
+  text-decoration: underline;
+}
+
+/* Content wrapper for dark theme */
+.content-wrapper {
+  background-color: rgba(20, 20, 20, 0.95);
+  border-radius: 15px;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 1200px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Ensure text is light on dark backgrounds */
+.content-wrapper h1,
+.content-wrapper h2,
+.content-wrapper h3,
+.content-wrapper h4,
+.content-wrapper h5,
+.content-wrapper h6,
+.content-wrapper p,
+.content-wrapper li,
+.content-wrapper span,
+.content-wrapper div {
+  color: #e0e0e0 !important;
+  text-shadow: none !important;
+}
+
+.about section .content-wrapper {
+  background-color: rgba(25, 25, 25, 0.95);
+}
+
+
+/* Override for sections with background images */
+.hero-section .content-wrapper,
+.services-section .content-wrapper,
+.section .content-wrapper,
+.blog-section .content-wrapper,
+.page-hero .content-wrapper {
+  background-color: rgba(250, 211, 211, 0.98);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 header {
@@ -298,7 +568,7 @@ main {
   padding-bottom: 50px;
   /* Add overlay for better content readability */
   background-blend-mode: overlay;
-  /* background-color: rgba(249, 249, 249, 0.9); */
+  background-color: rgba(10, 10, 10, 0.8);
 }
 
 /* Switch to blue background on smaller screens */
@@ -594,7 +864,7 @@ footer::before {
   position: fixed;
   top: 70px;
   left: 20px;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(20, 20, 20, 0.95);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 15px;
@@ -604,10 +874,10 @@ footer::before {
   transform: translateY(-10px);
   transition: all 0.3s ease;
   min-width: 200px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7);
   z-index: 2000;
   max-width: 400px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .nav-icon-wrapper:hover .nav-dropdown-modal {
@@ -698,10 +968,10 @@ footer::before {
   }
 
   .nav-dropdown-modal {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(15, 15, 15, 0.95);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .nav-menu a {
@@ -842,6 +1112,84 @@ footer::before {
 .blog-subtitle {
   color: #ffffff;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Portfolio and Blog Card Dark Theme */
+.portfolio-item,
+.blog-card,
+.insight-card {
+  background-color: #1a1a1a !important;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.portfolio-content h3,
+.blog-card-title a,
+.insight-title a {
+  color: #ffffff !important;
+  text-shadow: none !important;
+}
+
+.portfolio-content p,
+.blog-card-meta,
+.blog-card-excerpt,
+.insight-meta,
+.insight-excerpt {
+  color: #b0b0b0 !important;
+  text-shadow: none !important;
+}
+
+.portfolio-category {
+  color: #64b5f6 !important;
+  text-shadow: none !important;
+}
+
+/* Portfolio link fixes */
+.portfolio-link {
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+
+.btn-sm {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+
+.blog-card-title a:hover,
+.insight-title a:hover {
+  color: #90caf9 !important;
+}
+
+/* Main content sections background */
+section,
+.section,
+.container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Add dark background containers for content */
+.portfolio-section .container,
+.blog-section .container,
+.blog-integration .container {
+  background-color: rgba(15, 15, 15, 0.95);
+  border-radius: 15px;
+  padding: 3rem;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Button styles for dark theme */
+.btn-outline-primary {
+  background-color: transparent;
+  color: #64b5f6;
+  border: 2px solid #64b5f6;
+}
+
+.btn-outline-primary:hover {
+  background-color: #64b5f6;
+  color: #000000;
+  text-decoration: none;
 }
 
 [aria-describedby="footnote-label"] {
@@ -1042,7 +1390,8 @@ footer::before {
   perspective: 1000px;
   height: 400px;
   position: relative;
-  margin-bottom: 2rem; /* Add space between cards */
+  margin-bottom: 2rem;
+  /* Add space between cards */
   z-index: 1;
 }
 
@@ -1058,7 +1407,8 @@ footer::before {
 
 .product-card:hover .product-flip-container {
   transform: rotateY(180deg);
-  z-index: 10; /* Bring flipped card to front */
+  z-index: 10;
+  /* Bring flipped card to front */
 }
 
 .product-front,
@@ -1303,36 +1653,36 @@ footer::before {
     gap: 1.5rem;
     padding: 1rem 0;
   }
-  
+
   .product-card {
     height: 350px;
   }
-  
+
   .product-back {
     padding: 1.5rem;
   }
-  
+
   .product-info h3 {
     font-size: 1.3rem;
   }
-  
+
   .product-description {
     font-size: 0.9rem;
   }
-  
+
   .product-overlay h3 {
     font-size: 1.5rem;
   }
-  
+
   .shop-info-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }
-  
+
   .info-card {
     padding: 1.5rem;
   }
-  
+
   .page-hero {
     padding-top: 60px;
   }
@@ -1342,29 +1692,42 @@ footer::before {
   .product-card {
     height: 320px;
   }
-  
+
   .product-back {
     padding: 1rem;
   }
-  
+
   .product-features {
     gap: 0.3rem;
   }
-  
+
   .feature-tag {
     font-size: 0.75rem;
     padding: 0.2rem 0.5rem;
   }
-  
+
   .product-pricing {
     padding: 0.8rem;
   }
-  
+
   .price {
     font-size: 1.1rem;
   }
-  
+
   .turnaround {
     font-size: 0.8rem;
   }
+}
+
+/* Parallax Background Images */
+[data-parallax="scroll"][data-image-src*="logoIPM-5"] {
+  background-image: url('../img/logoIPM-5.png');
+}
+
+[data-parallax="scroll"][data-image-src*="bgblue01"] {
+  background-image: url('../img/bgblue01.jpg');
+}
+
+[data-parallax="scroll"][data-image-src*="theflag"] {
+  background-image: url('../img/theflag.png');
 }

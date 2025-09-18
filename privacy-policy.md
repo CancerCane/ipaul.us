@@ -2,7 +2,7 @@
 layout: default
 title: Privacy Policy
 ---
-
+<!--Markdownlint-disable  -->
 <section class="privacy-policy-section" style="padding: 60px 0;">
   <div class="container" style="max-width: 800px; margin: 0 auto;">
     <h1>Privacy Policy</h1>

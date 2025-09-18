@@ -3,7 +3,7 @@ layout: default
 title: Portfolio & Insights
 permalink: /portfolio/
 ---
-
+<!--Markdownlint-disable  -->
 <section class="portfolio-hero">
   <div class="container">
     <div class="text-center mb-5">

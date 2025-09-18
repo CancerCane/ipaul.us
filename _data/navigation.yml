@@ -5,6 +5,13 @@ main:
     url: /services/
   - title: Portfolio
     url: /portfolio/
+    submenu:
+      - title: Projects Overview
+        url: /portfolio/
+      - title: Interactive Gallery
+        url: /portfolio-gallery/
+  - title: Blog
+    url: /blog/
   - title: Veterans
     url: /veterans/
   - title: Tools

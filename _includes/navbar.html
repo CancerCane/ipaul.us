@@ -1,6 +1,6 @@
-<nav class="navbar navbar-light fixed-top mask-custom shadow-0">
-  <div class="container-fluid justify-content-center position-relative">
-    <!-- Icon with dropdown trigger -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top mask-custom shadow-0">
+  <div class="container-fluid">
+    <!-- Icon with dropdown trigger on the left -->
     <div class="nav-icon-wrapper">
       <img src="{{ '/assets/img/logo_header.png' | relative_url }}" alt="IPaul Media Logo" height="40" class="nav-icon">
       
@@ -23,9 +23,12 @@
       </div>
     </div>
     
-    <!-- Centered brand name -->
-    <a class="navbar-brand position-absolute" href="{{ '/' | relative_url }}">
+    <!-- Centered brand name using MDB classes -->
+    <a class="navbar-brand mx-auto d-lg-block" href="{{ '/' | relative_url }}">
       iPaul<span style="color: #5e9693">Media</span>
     </a>
+    
+    <!-- Empty div to balance the layout -->
+    <div style="width: 40px;"></div>
   </div>
 </nav>
