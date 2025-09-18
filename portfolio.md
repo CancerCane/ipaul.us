@@ -21,52 +21,61 @@ permalink: /portfolio/
     <div class="portfolio-grid">
       <!-- Project 1 -->
       <div class="portfolio-item">
-        <div class="portfolio-image">
-          <img src="{{ '/assets/img/dilogo.png' | relative_url }}" alt="Veteran Business Branding">
-          <div class="portfolio-overlay">
-            <h3>View Project</h3>
+        <a href="#" class="portfolio-link" data-project="veteran-alliance">
+          <div class="portfolio-image">
+            <img src="{{ '/assets/img/dilogo.png' | relative_url }}" alt="Veteran Business Branding">
+            <div class="portfolio-overlay">
+              <h3>View Project</h3>
+            </div>
           </div>
-        </div>
+        </a>
         <div class="portfolio-content">
           <h3>Veteran Business Alliance</h3>
           <p class="portfolio-category">Branding & Web Design</p>
           <p><strong>Challenge:</strong> Create a unified brand identity for veteran entrepreneurs.</p>
           <p><strong>What we did:</strong> Logo design, brand guidelines, responsive website, hosting setup.</p>
           <p><strong>Result:</strong> 150% increase in member engagement within 3 months.</p>
+          <a href="#" class="btn btn-sm btn-outline-primary mt-3" data-project="veteran-alliance">View Details</a>
         </div>
       </div>
 
       <!-- Project 2 -->
       <div class="portfolio-item">
-        <div class="portfolio-image">
-          <img src="{{ '/assets/img/knights01.png' | relative_url }}" alt="Knight Shield Engravings">
-          <div class="portfolio-overlay">
-            <h3>View Project</h3>
+        <a href="#" class="portfolio-link" data-project="knight-shields">
+          <div class="portfolio-image">
+            <img src="{{ '/assets/img/knights01.png' | relative_url }}" alt="Knight Shield Engravings">
+            <div class="portfolio-overlay">
+              <h3>View Project</h3>
+            </div>
           </div>
-        </div>
+        </a>
         <div class="portfolio-content">
           <h3>Knight Shield Collection</h3>
           <p class="portfolio-category">Makers Studio - Engraving</p>
           <p><strong>Challenge:</strong> Design custom military unit commemorative pieces.</p>
           <p><strong>What we did:</strong> Custom laser engraving on metal shields with unit insignias.</p>
           <p><strong>Result:</strong> Over 200 units delivered to veterans nationwide.</p>
+          <a href="#" class="btn btn-sm btn-outline-primary mt-3" data-project="knight-shields">View Details</a>
         </div>
       </div>
 
       <!-- Project 3 -->
       <div class="portfolio-item">
-        <div class="portfolio-image">
-          <img src="{{ '/assets/img/bgblue01.jpg' | relative_url }}" alt="E-commerce Platform">
-          <div class="portfolio-overlay">
-            <h3>View Project</h3>
+        <a href="#" class="portfolio-link" data-project="artisan-market">
+          <div class="portfolio-image">
+            <img src="{{ '/assets/img/bgblue01.jpg' | relative_url }}" alt="E-commerce Platform">
+            <div class="portfolio-overlay">
+              <h3>View Project</h3>
+            </div>
           </div>
-        </div>
+        </a>
         <div class="portfolio-content">
           <h3>Dallas Artisan Market</h3>
           <p class="portfolio-category">E-commerce & Photography</p>
           <p><strong>Challenge:</strong> Launch online marketplace for local artisans.</p>
           <p><strong>What we did:</strong> Product photography, website development, payment integration.</p>
           <p><strong>Result:</strong> $50K in sales within first quarter of launch.</p>
+          <a href="#" class="btn btn-sm btn-outline-primary mt-3" data-project="artisan-market">View Details</a>
         </div>
       </div>
     </div>
