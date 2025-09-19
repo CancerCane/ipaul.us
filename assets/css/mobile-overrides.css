@@ -36,6 +36,12 @@ body {
   padding-right: 0 !important;
 }
 
+@media (min-width: 768px) {
+  body {
+    padding-top: 80px; /* Larger nav on desktop */
+  }
+}
+
 /* Fix grid container overflow */
 .grid-container {
   overflow-x: auto !important;

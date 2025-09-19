@@ -1,0 +1,212 @@
+/* Desktop Enhancements for Mobile-First Design */
+
+/* Large Screen Optimizations */
+@media (min-width: 1024px) {
+  /* Enhanced Container Spacing */
+  .container {
+    max-width: 1200px;
+    padding: 0 2rem;
+  }
+  
+  /* Improved Typography for Desktop Reading */
+  body {
+    font-size: 1.125rem;
+  }
+  
+  p {
+    max-width: 65ch; /* Optimal reading length */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Enhanced Card Layouts */
+  .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Grid Enhancements */
+  .grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+  }
+  
+  /* Hero Section Enhancements */
+  #landing,
+  #intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  /* Parallax Effects for Desktop Only */
+  .parallax-container {
+    background-attachment: fixed !important;
+  }
+  
+  /* Enhanced Hover States */
+  a {
+    position: relative;
+    transition: color 0.3s ease;
+  }
+  
+  a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: currentColor;
+    transition: width 0.3s ease;
+  }
+  
+  a:hover::after {
+    width: 100%;
+  }
+  
+  /* Better Forms for Desktop */
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-control,
+  .form-select {
+    padding: 0.75rem 1.25rem;
+    font-size: 1rem;
+  }
+  
+  /* Desktop-Optimized Modals */
+  .modal-dialog {
+    max-width: 600px;
+    margin: 2rem auto;
+  }
+  
+  .modal-content {
+    border-radius: 0.5rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* Extra Large Screens */
+@media (min-width: 1440px) {
+  .container {
+    max-width: 1320px;
+  }
+  
+  /* Multi-column layouts for content */
+  .content-columns {
+    column-count: 2;
+    column-gap: 3rem;
+  }
+  
+  /* Enhanced spacing */
+  section {
+    padding: 6rem 0;
+  }
+  
+  /* Larger hero sections */
+  .hero-section {
+    min-height: 90vh;
+  }
+}
+
+/* Ultra-wide Screens */
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1536px;
+  }
+  
+  /* Sidebar layouts become viable */
+  .with-sidebar {
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    gap: 3rem;
+  }
+  
+  /* Mega menu support */
+  .nav-submenu {
+    min-width: 300px;
+  }
+}
+
+/* High DPI Display Support */
+@media (-webkit-min-device-pixel-ratio: 2),
+       (min-resolution: 192dpi) {
+  /* Sharper borders and shadows */
+  .card {
+    border: 0.5px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Crisper text rendering */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Desktop Animation Preferences */
+@media (min-width: 768px) and (prefers-reduced-motion: no-preference) {
+  /* Smooth scroll behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Page transitions */
+  main {
+    animation: fadeIn 0.5s ease-in;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Stagger animations for cards */
+  .card {
+    animation: slideUp 0.5s ease-out backwards;
+  }
+  
+  .card:nth-child(2) { animation-delay: 0.1s; }
+  .card:nth-child(3) { animation-delay: 0.2s; }
+  .card:nth-child(4) { animation-delay: 0.3s; }
+  
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Desktop-specific utility classes */
+@media (min-width: 768px) {
+  .desktop-only { display: block !important; }
+  .desktop-hidden { display: none !important; }
+  
+  /* Sticky elements on desktop */
+  .desktop-sticky {
+    position: sticky;
+    top: 100px;
+  }
+  
+  /* Desktop spacing utilities */
+  .desktop-mt-5 { margin-top: 3rem !important; }
+  .desktop-mb-5 { margin-bottom: 3rem !important; }
+  .desktop-py-5 { padding-top: 3rem !important; padding-bottom: 3rem !important; }
+}
