@@ -1,0 +1,121 @@
+{
+  "name": "iPaul Media - Creative Digital Studio",
+  "short_name": "iPaul Media",
+  "description": "Veteran-owned creative studio specializing in digital media, design, and development",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#303030",
+  "theme_color": "#5e9693",
+  "prefer_related_applications": false,
+  "scope": "/",
+  "lang": "en-US",
+  "dir": "ltr",
+  "categories": ["business", "design", "developer", "photo"],
+  "icons": [
+    {
+      "src": "/assets/img/icon-48.png",
+      "sizes": "48x48",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/img/icon-72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/img/icon-96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/img/icon-144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/img/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/assets/img/icon-256.png",
+      "sizes": "256x256",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/img/icon-384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/img/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Portfolio",
+      "description": "View our creative work",
+      "url": "/portfolio/",
+      "icons": [
+        {
+          "src": "/assets/img/portfolio-icon.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Blog",
+      "description": "Read our latest posts",
+      "url": "/blog/",
+      "icons": [
+        {
+          "src": "/assets/img/blog-icon.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Contact",
+      "description": "Get in touch",
+      "url": "/contact/",
+      "icons": [
+        {
+          "src": "/assets/img/contact-icon.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/assets/img/screenshot-mobile.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/assets/img/screenshot-desktop.png",
+      "sizes": "1920x1080",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ],
+  "related_applications": [],
+  "features": [
+    "Cross Platform",
+    "Fast",
+    "Offline Capable",
+    "Installable"
+  ]
+}

@@ -1,0 +1,89 @@
+/* Mobile Overrides for Desktop-First Issues */
+
+/* Fix minimum width constraint that causes horizontal scroll */
+.container {
+  min-width: 0 !important;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+/* Fix viewport height issues on mobile */
+#landing,
+#intro,
+#contact,
+#footer {
+  height: auto !important;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+/* Fix parallax backgrounds on mobile (they don't work well) */
+@media (max-width: 768px) {
+  .parallax-container,
+  .parallax-hero,
+  #products,
+  #landing,
+  #intro,
+  #about {
+    background-attachment: scroll !important;
+  }
+}
+
+/* Ensure proper padding for navigation offset */
+body {
+  padding-top: 60px; /* Account for fixed mobile nav */
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Fix grid container overflow */
+.grid-container {
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Improve readability on mobile */
+@media (max-width: 768px) {
+  p, li {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+  
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.25rem; }
+  
+  /* Fix card spacing */
+  .card {
+    margin-bottom: 1rem;
+  }
+  
+  /* Fix navigation spacing with new mobile nav */
+  .navbar {
+    display: none; /* Hide old navbar on mobile */
+  }
+}
+
+/* Ensure images are responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Fix form inputs for mobile */
+.form-control,
+.form-select,
+.btn {
+  font-size: 16px !important; /* Prevent zoom on iOS */
+}
+
+/* Fix modal for mobile */
+.modal-dialog {
+  margin: 1rem;
+}
+
+@media (max-width: 576px) {
+  .modal-dialog {
+    margin: 0.5rem;
+  }
+}

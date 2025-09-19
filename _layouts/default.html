@@ -27,11 +27,20 @@
     <link rel="stylesheet" href="{{ '/assets/css/flip.css' | relative_url }}" />
     <!-- Custom styles last to override everything -->
     <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}" />
+    <!-- Mobile-first CSS -->
+    <link rel="stylesheet" href="{{ '/assets/css/mobile-first.css' | relative_url }}" />
+    <link rel="stylesheet" href="{{ '/assets/css/mobile-overrides.css' | relative_url }}" />
+    
+    <!-- PWA manifest and meta tags -->
+    <link rel="manifest" href="{{ '/manifest.json' | relative_url }}" />
+    <meta name="theme-color" content="#5e9693" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   </head>
 
   <body>
     <header>
-      {% include navbar.html %}
+      {% include mobile-navbar.html %}
     </header>
     
     <main id="content">{{ content }}</main>
@@ -47,5 +56,16 @@
     <script src="{{ '/assets/js/navbar.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/index.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/portfolio-modal.js' | relative_url }}"></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('{{ "/sw.js" | relative_url }}')
+            .then(registration => console.log('ServiceWorker registered:', registration))
+            .catch(err => console.log('ServiceWorker registration failed:', err));
+        });
+      }
+    </script>
   </body>
 </html>
