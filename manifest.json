@@ -111,11 +111,5 @@
       "form_factor": "wide"
     }
   ],
-  "related_applications": [],
-  "features": [
-    "Cross Platform",
-    "Fast",
-    "Offline Capable",
-    "Installable"
-  ]
+  "related_applications": []
 }

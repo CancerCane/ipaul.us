@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +11,7 @@
       padding: 0;
       box-sizing: border-box;
     }
-    
+
     body {
       font-family: system-ui, -apple-system, sans-serif;
       background-color: #303030;
@@ -21,32 +22,32 @@
       min-height: 100vh;
       padding: 2rem;
     }
-    
+
     .offline-container {
       text-align: center;
       max-width: 600px;
     }
-    
+
     h1 {
       font-size: 2.5rem;
       margin-bottom: 1rem;
       color: #5e9693;
     }
-    
+
     p {
       font-size: 1.125rem;
       line-height: 1.6;
       margin-bottom: 2rem;
       opacity: 0.9;
     }
-    
+
     .offline-icon {
       width: 120px;
       height: 120px;
       margin: 0 auto 2rem;
       opacity: 0.8;
     }
-    
+
     .retry-button {
       display: inline-block;
       padding: 0.75rem 2rem;
@@ -57,26 +58,30 @@
       font-weight: 500;
       transition: background-color 0.3s;
     }
-    
+
     .retry-button:hover {
       background-color: #4a7875;
     }
   </style>
 </head>
+
 <body>
   <div class="offline-container">
     <svg class="offline-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="#5e9693"/>
-      <line x1="3" y1="21" x2="21" y2="3" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+      <!-- Cloud with slash (offline/disconnected icon) -->
+      <path d="M19.36 10.46A7 7 0 0 0 5 9c-3.31 0-6 2.69-6 6a6 6 0 0 0 6 6h13a5 5 0 0 0 5-5c0-2.76-2.24-5-5-5z"
+        fill="#5e9693" />
+      <line x1="4" y1="20" x2="20" y2="4" stroke="#fff" stroke-width="2" stroke-linecap="round" />
     </svg>
-    
+
     <h1>You're Offline</h1>
-    <p>It looks like you've lost your internet connection. Some features may be unavailable until you're back online.</p>
+    <p>It looks like you've lost your internet connection. Some features may be unavailable until you're back online.
+    </p>
     <p>Don't worry though - we've saved this page for offline viewing!</p>
-    
+
     <button onclick="window.location.reload()" class="retry-button">Try Again</button>
   </div>
-  
+
   <script>
     // Check if back online
     window.addEventListener('online', () => {
@@ -84,4 +89,5 @@
     });
   </script>
 </body>
+
 </html>

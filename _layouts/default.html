@@ -1,72 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <title>{% if page.title %}{{ page.title }} - {% endif %}IPaul Media and Creations</title>
-    {% include head.html %}
-    <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" type="image/x-icon" />
-    <link rel="icon" href="{{ '/favicon.png' | relative_url }}" type="image/png" />
-    <link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | relative_url }}" />
-    <!-- Load minima theme CSS first -->
-    <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}" />
-    <!-- Then load additional CSS -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
-    />
-    <link rel="stylesheet" href="{{ '/assets/css/mdb.dark.min.css' | relative_url }}" />
-    <link rel="stylesheet" href="{{ '/assets/css/flip.css' | relative_url }}" />
-    <!-- Custom styles last to override everything -->
-    <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}" />
-    <!-- Mobile-first CSS -->
-    <link rel="stylesheet" href="{{ '/assets/css/mobile-first.css' | relative_url }}" />
-    <link rel="stylesheet" href="{{ '/assets/css/mobile-overrides.css' | relative_url }}" />
-    <link rel="stylesheet" href="{{ '/assets/css/desktop-enhancements.css' | relative_url }}" />
-    
-    <!-- PWA manifest and meta tags -->
-    <link rel="manifest" href="{{ '/manifest.json' | relative_url }}" />
-    <meta name="theme-color" content="#5e9693" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  </head>
 
-  <body>
-    <header>
-      {% include mobile-navbar.html %}
-    </header>
-    
-    <main id="content">{{ content }}</main>
-    
-    {% include cta-band.html %}
-    {% include scripts.html %}
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>{% if page.title %}{{ page.title }} - {% endif %}IPaul Media and Creations</title>
+  {% include head.html %}
+  <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" type="image/x-icon" />
+  <link rel="icon" href="{{ '/favicon.png' | relative_url }}" type="image/png" />
+  <link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | relative_url }}" />
+  <!-- Load minima theme CSS first -->
+  <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}" />
+  <!-- Then load additional CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
+  <link rel="stylesheet" href="{{ '/assets/css/mdb.dark.min.css' | relative_url }}" />
+  <link rel="stylesheet" href="{{ '/assets/css/flip.css' | relative_url }}" />
+  <!-- Custom styles last to override everything -->
+  <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}" />
+  <!-- Mobile-first CSS -->
+  <link rel="stylesheet" href="{{ '/assets/css/mobile-first.css' | relative_url }}" />
+  <link rel="stylesheet" href="{{ '/assets/css/mobile-overrides.css' | relative_url }}" />
+  <link rel="stylesheet" href="{{ '/assets/css/desktop-enhancements.css' | relative_url }}" />
 
-    {% include footer.html %}
+  <!-- PWA manifest and meta tags -->
+  <link rel="manifest" href="{{ '/manifest.json' | relative_url }}" />
+  <meta name="theme-color" content="#5e9693" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+</head>
 
-    <!-- MDB JS includes Bootstrap functionality -->
-    <script src="{{ '/assets/js/mdb.umd.min.js' | relative_url }}"></script>
-    <!-- Custom scripts after MDB -->
-    <script src="{{ '/assets/js/navbar.js' | relative_url }}"></script>
-    <script src="{{ '/assets/js/index.js' | relative_url }}"></script>
-    <script src="{{ '/assets/js/portfolio-modal.js' | relative_url }}"></script>
-    
-    <!-- Service Worker Registration -->
-    <script>
-      if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-          navigator.serviceWorker.register('{{ "/sw.js" | relative_url }}')
-            .then(registration => console.log('ServiceWorker registered:', registration))
-            .catch(err => console.log('ServiceWorker registration failed:', err));
-        });
-      }
-    </script>
-  </body>
+<body>
+  <header>
+    {% if site.use_mobile_navbar %}
+    {% include mobile-navbar.html %}
+    {% else %}
+    {% include navbar.html %}
+    {% endif %}
+  </header>
+
+  <main id="content">{{ content }}</main>
+
+  {% include cta-band.html %}
+  {% include scripts.html %}
+
+  {% include footer.html %}
+
+  <!-- MDB JS includes Bootstrap functionality -->
+  <script src="{{ '/assets/js/mdb.umd.min.js' | relative_url }}"></script>
+  <!-- Custom scripts after MDB -->
+  <script src="{{ '/assets/js/navbar.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/index.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/portfolio-modal.js' | relative_url }}"></script>
+
+  <!-- Service Worker Registration -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('{{ "/sw.js" | relative_url }}')
+          .then(registration => console.log('ServiceWorker registered:', registration))
+          .catch(err => console.log('ServiceWorker registration failed:', err));
+      });
+    }
+  </script>
+</body>
+
 </html>

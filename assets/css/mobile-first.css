@@ -16,7 +16,7 @@
   --text-3xl: clamp(1.875rem, 6vw, 2.5rem);
   --text-4xl: clamp(2.25rem, 7vw, 3rem);
   --text-5xl: clamp(3rem, 8vw, 4rem);
-  
+
   /* Fluid Spacing Scale */
   --space-xs: clamp(0.25rem, 1vw, 0.5rem);
   --space-sm: clamp(0.5rem, 2vw, 0.75rem);
@@ -25,10 +25,11 @@
   --space-xl: clamp(2rem, 5vw, 3rem);
   --space-2xl: clamp(3rem, 6vw, 4rem);
   --space-3xl: clamp(4rem, 8vw, 6rem);
-  
+
   /* Touch Target Minimum (44px) */
-  --touch-target: max(44px, 2.75rem);
-  
+  --touch-target: 2.75rem;
+  /* Use a fixed value for better compatibility */
+
   /* Container Widths */
   --container-xs: 100%;
   --container-sm: 640px;
@@ -36,7 +37,7 @@
   --container-lg: 1024px;
   --container-xl: 1280px;
   --container-2xl: 1536px;
-  
+
   /* Z-index Scale */
   --z-dropdown: 1000;
   --z-sticky: 1020;
@@ -45,7 +46,7 @@
   --z-modal: 1050;
   --z-popover: 1060;
   --z-tooltip: 1070;
-  
+
   /* Mobile-First Breakpoints */
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;
@@ -62,9 +63,11 @@
 }
 
 html {
-  font-size: 16px; /* Base font size for rem calculations */
+  font-size: 16px;
+  /* Base font size for rem calculations */
   scroll-behavior: smooth;
-  -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape */
+  -webkit-text-size-adjust: 100%;
+  /* Prevent font scaling in landscape */
   text-size-adjust: 100%;
 }
 
@@ -76,7 +79,8 @@ body {
   background-color: var(--mdb-body-bg);
   overflow-x: hidden;
   min-height: 100vh;
-  min-height: 100dvh; /* Dynamic viewport height for mobile */
+  min-height: 100dvh;
+  /* Dynamic viewport height for mobile */
 }
 
 /* Mobile-First Container */
@@ -127,12 +131,29 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--mdb-heading-color);
 }
 
-h1 { font-size: var(--text-3xl); }
-h2 { font-size: var(--text-2xl); }
-h3 { font-size: var(--text-xl); }
-h4 { font-size: var(--text-lg); }
-h5 { font-size: var(--text-base); }
-h6 { font-size: var(--text-sm); }
+h1 {
+  font-size: var(--text-3xl);
+}
+
+h2 {
+  font-size: var(--text-2xl);
+}
+
+h3 {
+  font-size: var(--text-xl);
+}
+
+h4 {
+  font-size: var(--text-lg);
+}
+
+h5 {
+  font-size: var(--text-base);
+}
+
+h6 {
+  font-size: var(--text-sm);
+}
 
 p {
   margin-block-end: var(--space-md);
@@ -151,7 +172,8 @@ textarea,
   align-items: center;
   justify-content: center;
   padding: var(--space-sm) var(--space-md);
-  touch-action: manipulation; /* Prevent double-tap zoom */
+  touch-action: manipulation;
+  /* Prevent double-tap zoom */
 }
 
 /* Mobile-First Images */
@@ -200,14 +222,14 @@ img {
   background: var(--mdb-card-bg);
   border-radius: 0.5rem;
   padding: var(--space-md);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
 @media (hover: hover) {
   .mobile-card:hover {
     transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   }
 }
 
@@ -220,7 +242,7 @@ img {
   z-index: var(--z-fixed);
   background: var(--mdb-body-bg);
   padding: var(--space-sm) var(--space-md);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .mobile-nav-toggle {
@@ -260,22 +282,33 @@ img {
 }
 
 /* Utility Classes for Mobile */
-.mobile-hidden { display: none !important; }
-.mobile-only { display: block !important; }
+.mobile-hidden {
+  display: none !important;
+}
+
+.mobile-only {
+  display: block !important;
+}
 
 @media (min-width: 768px) {
-  .mobile-hidden { display: block !important; }
-  .mobile-only { display: none !important; }
+  .mobile-hidden {
+    display: block !important;
+  }
+
+  .mobile-only {
+    display: none !important;
+  }
 }
 
 /* Safe Area Insets for Modern Phones */
 @supports (padding: max(0px)) {
+
   .mobile-nav,
   .mobile-menu {
     padding-left: max(var(--space-md), env(safe-area-inset-left));
     padding-right: max(var(--space-md), env(safe-area-inset-right));
   }
-  
+
   .mobile-menu {
     padding-bottom: max(var(--space-lg), env(safe-area-inset-bottom));
   }
@@ -293,6 +326,7 @@ img {
 
 /* Reduced Motion Support */
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
@@ -300,7 +334,7 @@ img {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-  
+
   html {
     scroll-behavior: auto;
   }
@@ -315,12 +349,13 @@ img {
 
 /* Print Styles for Mobile */
 @media print {
+
   .mobile-nav,
   .mobile-menu,
   .no-print {
     display: none !important;
   }
-  
+
   body {
     font-size: 12pt;
     line-height: 1.5;

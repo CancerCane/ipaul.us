@@ -30,12 +30,31 @@ self.addEventListener('fetch', event => {
         if (response) {
           return response;
         }
-        return fetch(event.request);
+        // Cache miss - fetch from network and cache it
+        return fetch(event.request)
+          .then(networkResponse => {
+      // If both fail, show offline page only for navigation requests
+      if (event.request.mode === 'navigate') {
+        return caches.match('/offline.html');
       }
-    ).catch(() => {
-      // If both fail, show offline page
-      return caches.match('/offline.html');
-    })
+      // For non-navigation requests, just fail silently
+      return Promise.reject('Network error');
+              networkResponse &&
+              networkResponse.status === 200 &&
+              networkResponse.type === 'basic'
+            ) {
+              const responseToCache = networkResponse.clone();
+              caches.open(CACHE_NAME).then(cache => {
+                cache.put(event.request, responseToCache);
+              });
+            }
+            return networkResponse;
+          });
+      })
+      .catch(() => {
+        // If both fail, show offline page
+        return caches.match('/offline.html');
+      })
   );
 });
 
