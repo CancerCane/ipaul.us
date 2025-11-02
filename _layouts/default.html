@@ -25,11 +25,13 @@
     />
     <link rel="stylesheet" href="{{ '/assets/css/mdb.dark.min.css' | relative_url }}" />
     <link rel="stylesheet" href="{{ '/assets/css/flip.css' | relative_url }}" />
+    <link rel="stylesheet" href="{{ '/assets/css/loading-screen.css' | relative_url }}" />
     <!-- Custom styles last to override everything -->
     <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}" />
   </head>
 
   <body>
+    {% include loading-screen.html %}
     <header>
       {% include navbar.html %}
     </header>
@@ -44,6 +46,7 @@
     <!-- MDB JS includes Bootstrap functionality -->
     <script src="{{ '/assets/js/mdb.umd.min.js' | relative_url }}"></script>
     <!-- Custom scripts after MDB -->
+    <script src="{{ '/assets/js/loading-screen.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/navbar.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/index.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/portfolio-modal.js' | relative_url }}"></script>
