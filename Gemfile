@@ -37,6 +37,10 @@ gem "http_parser.rb", "~> 0.6.0", :platforms => [:jruby]
 gem "ruby-lsp", "~> 0.26.1"
 
 # Development tools
+group :development, :test do
+  gem "rspec", "~> 3.12", require: false
+end
+
 group :development do
   gem "rubocop", "~> 1.50", require: false
   gem "rubocop-performance", require: false
