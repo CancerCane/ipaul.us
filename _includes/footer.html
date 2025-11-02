@@ -1,82 +1,37 @@
 <footer>
   <div class="footer-container">
-    <div class="footer-logo">
-      <!-- Logo Placeholder - Replace with your actual logo -->
-      <img src="{{ '/assets/img/knights01.png' | relative_url }}" alt="IPaul Media and Creations Logo" class="footer-logo-img">
-    </div>
-    
-    <div class="footer-content">
-      <!-- Contact Link -->
-      <div class="footer-section">
-        <a href="{{ '/contact/' | relative_url }}" class="contact-link">
-          <i class="fas fa-envelope"></i> Contact Us
+    <div class="footer-top">
+      <div class="footer-logo">
+        <img src="{{ '/assets/img/knights01.png' | relative_url }}" alt="IPaul Media and Creations Logo" class="footer-logo-img">
+      </div>
+      
+      <nav class="footer-nav">
+        <a href="{{ '/about/' | relative_url }}">About</a>
+        <a href="{{ '/services/' | relative_url }}">Services</a>
+        <a href="{{ '/blog/' | relative_url }}">Blog</a>
+        <a href="{{ '/shop/' | relative_url }}">Shop</a>
+        <a href="{{ '/contact/' | relative_url }}">Contact</a>
+      </nav>
+      
+      <div class="footer-social">
+        <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://www.github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
         </a>
       </div>
-      
-      <!-- Company Link -->
-      <div class="footer-section">
-        <h4 class="footer-title">Company</h4>
-        <ul>
-          <li><a href="{{ '/about/' | relative_url }}">About</a></li>
-          <li><a href="{{ '/services/' | relative_url }}">Services</a></li>
-          <li><a href="{{ '/blog/' | relative_url }}">Blog</a></li>
-          <li><a href="{{ '/contact/' | relative_url }}">Contact</a></li>
-          <li><a href="{{ '/shop/' | relative_url }}">Shop</a></li>
-          <li><a href="{{ '/privacy-policy/' | relative_url }}">Privacy Policy</a></li>
-          <li><a href="{{ '/cookie-policy/' | relative_url }}">Cookie Policy</a></li>
-        </ul>
-       </div>
-      
-      <!-- Reference Links -->
-      <div class="footer-section">
-        <h4 class="footer-title">References</h4>
-        <div class="references">
-          <a href="https://www.grants.gov" target="_blank" rel="noopener noreferrer">Grants.gov</a>
-          <!-- <a href="#reference2">Client Testimonial</a>
-          <a href="#reference3">Case Study</a> -->
-          <a href="https://www.va.gov" target="_blank" rel="noopener noreferrer">VA</a>
-          <a href="https://www.sba.gov" target="_blank" rel="noopener noreferrer">SBA</a>
-        </div>
-      </div>
-      
-      <!-- Social Media Links -->
-      <div class="footer-section">
-        <h4 class="footer-title">Follow Us</h4>
-        <div class="social-links">
-          <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-facebook-f"></i> Facebook
-          </a>
-          <a href="https://www.github.com" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-github"></i> GitHub
-          </a>
-          <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-instagram"></i> Instagram
-          </a>
-        </div>
-      </div>
     </div>
     
-    <!-- Footnotes Section -->
-    <div class="footer-footnotes">
-      <div class="footnotes-container">
-        <h4 class="footnotes-title" id="footnote-label">Footnotes</h4>
-        <ol class="footnotes-list">
-          <li id="footnotes">
-            <span class="footnote-marker">[1]</span>
-            Services only offered to U.S. military veterans.
-            <a href="#footnotes-ref" aria-label="Back to content" class="footnote-backref">↩</a>
-          </li>
-        </ol>
-      </div>
-    </div>
-    
-    <!-- Copyright -->
     <div class="footer-bottom">
       <p>&copy; {{ 'now' | date: "%Y" }} IPaul Media and Creations. All rights reserved.</p>
-      <div class="legal-links">
-        <a href="{{ '/privacy-policy/' | relative_url }}">Privacy Policy</a>
+      <div class="footer-links">
+        <a href="{{ '/privacy-policy/' | relative_url }}">Privacy</a>
         <span class="separator">|</span>
-        <a href="{{ '/cookie-policy/' | relative_url }}">Cookie Policy</a>
+        <a href="{{ '/cookie-policy/' | relative_url }}">Cookies</a>
       </div>
     </div>
   </div>
