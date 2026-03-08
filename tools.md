@@ -16,6 +16,18 @@ subtitle: Free utilities for founders and veterans.
 
 **CTA:** [Calculate Your Benefits](/benefits-calculator/)
 
+### Server Power Calculator (NEW!)
+
+**Estimate power draw and electricity costs** for your server infrastructure. Features include:
+- CPU, RAM, storage, and GPU power inputs
+- PSU efficiency ratings (80 Plus tiers)
+- PUE (facility cooling overhead)
+- Redundancy models (N, N+1, 2N)
+- Monthly and yearly cost estimates
+- Print-friendly summaries
+
+**CTA:** [Calculate Server Power](/server-power-calculator/)
+
 ### Benefits Finder (beta)
 
 Quickly scan veteran programs, grant leads, and business support links. Save

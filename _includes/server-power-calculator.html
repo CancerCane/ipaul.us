@@ -1,0 +1,464 @@
+<!-- _includes/server-power-calculator.html -->
+<div id="server-power-calc" class="ipm-benefits-card">
+  <h2 class="ipm-title">Server Power Calculator</h2>
+
+  <!-- ── Server basics ── -->
+  <div class="spc-grid">
+    <div class="ipm-field">
+      <label for="spcServerType">Server type</label>
+      <select id="spcServerType" class="spc-select">
+        <option value="rack-1u">1U Rack Server</option>
+        <option value="rack-2u" selected>2U Rack Server</option>
+        <option value="rack-4u">4U Rack Server</option>
+        <option value="tower">Tower Server</option>
+        <option value="blade">Blade Server</option>
+        <option value="custom">Custom / Other</option>
+      </select>
+    </div>
+    <div class="ipm-field">
+      <label for="spcNumServers">Number of servers</label>
+      <input id="spcNumServers" type="number" min="1" value="1" class="ipm-num" />
+    </div>
+  </div>
+
+  <!-- ── CPU ── -->
+  <fieldset class="spc-section">
+    <legend>CPU</legend>
+    <div class="spc-grid">
+      <div class="ipm-field">
+        <label for="spcCpuCount">CPUs per server</label>
+        <input id="spcCpuCount" type="number" min="1" max="8" value="2" class="ipm-num" />
+      </div>
+      <div class="ipm-field">
+        <label for="spcCpuTdp">TDP per CPU (watts)</label>
+        <input id="spcCpuTdp" type="number" min="0" value="205" class="ipm-num" />
+        <small>Check manufacturer spec sheet for TDP.</small>
+      </div>
+    </div>
+  </fieldset>
+
+  <!-- ── Memory ── -->
+  <fieldset class="spc-section">
+    <legend>Memory</legend>
+    <div class="spc-grid">
+      <div class="ipm-field">
+        <label for="spcDimmCount">DIMM sticks per server</label>
+        <input id="spcDimmCount" type="number" min="0" value="16" class="ipm-num" />
+      </div>
+      <div class="ipm-field">
+        <label for="spcDimmWatts">Watts per DIMM</label>
+        <input id="spcDimmWatts" type="number" min="0" step="0.5" value="5" class="ipm-num" />
+        <small>DDR5: ~5W | DDR4: ~3–4W per DIMM.</small>
+      </div>
+    </div>
+  </fieldset>
+
+  <!-- ── Storage ── -->
+  <fieldset class="spc-section">
+    <legend>Storage</legend>
+    <div class="spc-grid">
+      <div class="ipm-field">
+        <label for="spcHddCount">HDDs per server</label>
+        <input id="spcHddCount" type="number" min="0" value="0" class="ipm-num" />
+      </div>
+      <div class="ipm-field">
+        <label for="spcHddWatts">Watts per HDD</label>
+        <input id="spcHddWatts" type="number" min="0" step="0.5" value="8" class="ipm-num" />
+      </div>
+      <div class="ipm-field">
+        <label for="spcSsdCount">SSDs per server</label>
+        <input id="spcSsdCount" type="number" min="0" value="4" class="ipm-num" />
+      </div>
+      <div class="ipm-field">
+        <label for="spcSsdWatts">Watts per SSD</label>
+        <input id="spcSsdWatts" type="number" min="0" step="0.5" value="3" class="ipm-num" />
+      </div>
+    </div>
+  </fieldset>
+
+  <!-- ── GPU / Accelerators ── -->
+  <details class="ipm-adv">
+    <summary>GPU / Accelerator Cards (optional)</summary>
+    <div class="spc-grid" style="padding-top:.5rem">
+      <div class="ipm-field">
+        <label for="spcGpuCount">GPUs per server</label>
+        <input id="spcGpuCount" type="number" min="0" value="0" class="ipm-num" />
+      </div>
+      <div class="ipm-field">
+        <label for="spcGpuTdp">TDP per GPU (watts)</label>
+        <input id="spcGpuTdp" type="number" min="0" value="300" class="ipm-num" />
+      </div>
+    </div>
+  </details>
+
+  <!-- ── Miscellaneous per-server draw ── -->
+  <details class="ipm-adv">
+    <summary>Miscellaneous per-server draw (optional)</summary>
+    <div class="spc-grid" style="padding-top:.5rem">
+      <div class="ipm-field">
+        <label for="spcFanWatts">Fans / cooling (watts)</label>
+        <input id="spcFanWatts" type="number" min="0" value="30" class="ipm-num" />
+      </div>
+      <div class="ipm-field">
+        <label for="spcMoboWatts">Motherboard + NIC (watts)</label>
+        <input id="spcMoboWatts" type="number" min="0" value="50" class="ipm-num" />
+      </div>
+      <div class="ipm-field">
+        <label for="spcOtherWatts">Other draw (watts)</label>
+        <input id="spcOtherWatts" type="number" min="0" value="0" class="ipm-num" />
+      </div>
+    </div>
+  </details>
+
+  <!-- ── Efficiency & Facility ── -->
+  <fieldset class="spc-section">
+    <legend>PSU &amp; Facility</legend>
+    <div class="spc-grid">
+      <div class="ipm-field">
+        <label for="spcPsuEff">PSU efficiency rating</label>
+        <select id="spcPsuEff" class="spc-select">
+          <option value="0.80">80 Plus (80%)</option>
+          <option value="0.85">80 Plus Bronze (85%)</option>
+          <option value="0.88">80 Plus Silver (88%)</option>
+          <option value="0.90">80 Plus Gold (90%)</option>
+          <option value="0.92" selected>80 Plus Platinum (92%)</option>
+          <option value="0.94">80 Plus Titanium (94%)</option>
+        </select>
+        <small>Higher efficiency = less wasted energy as heat.</small>
+      </div>
+      <div class="ipm-field">
+        <label for="spcPue">Power Usage Effectiveness (PUE)</label>
+        <input id="spcPue" type="number" min="1" max="3" step="0.01" value="1.58" class="ipm-num" />
+        <small>Industry average ≈ 1.58. Hyperscale DCs ≈ 1.1–1.2.</small>
+      </div>
+      <div class="ipm-field">
+        <label for="spcRedundancy">Redundancy model</label>
+        <select id="spcRedundancy" class="spc-select">
+          <option value="1" selected>N (no spare)</option>
+          <option value="1.5">N+1 (one spare PSU)</option>
+          <option value="2">2N (full mirror)</option>
+        </select>
+      </div>
+      <div class="ipm-field">
+        <label for="spcCostKwh">Electricity cost ($/kWh)</label>
+        <input id="spcCostKwh" type="number" min="0" step="0.01" value="0.12" class="ipm-num" />
+      </div>
+    </div>
+  </fieldset>
+
+  <!-- ── Results ── -->
+  <div class="ipm-results">
+    <div class="spc-result-grid">
+      <div class="spc-result-item">
+        <span class="spc-label">Component draw / server</span>
+        <span class="spc-value"><span id="spcCompWatts">—</span> W</span>
+      </div>
+      <div class="spc-result-item">
+        <span class="spc-label">Wall draw / server (after PSU loss)</span>
+        <span class="spc-value"><span id="spcWallWatts">—</span> W</span>
+      </div>
+      <div class="spc-result-item">
+        <span class="spc-label">Facility draw / server (with PUE)</span>
+        <span class="spc-value"><span id="spcFacWatts">—</span> W</span>
+      </div>
+    </div>
+    <hr />
+    <div class="spc-result-grid">
+      <div class="spc-result-item">
+        <span class="spc-label">Total IT load (all servers)</span>
+        <span class="spc-value"><span id="spcTotalIT">—</span> W</span>
+      </div>
+      <div class="spc-result-item">
+        <span class="spc-label">Total facility load</span>
+        <span class="spc-value"><span id="spcTotalFac">—</span> W</span>
+      </div>
+      <div class="spc-result-item">
+        <span class="spc-label">Provisioned capacity (redundancy)</span>
+        <span class="spc-value"><span id="spcProvision">—</span> W</span>
+      </div>
+    </div>
+    <hr />
+    <div class="spc-result-grid">
+      <div class="spc-result-item">
+        <span class="spc-label">Monthly energy</span>
+        <span class="spc-value"><span id="spcMonthKwh">—</span> kWh</span>
+      </div>
+      <div class="spc-result-item">
+        <span class="spc-label">Yearly energy</span>
+        <span class="spc-value"><span id="spcYearKwh">—</span> kWh</span>
+      </div>
+    </div>
+    <hr />
+    <div class="ipm-total"><strong>Est. monthly cost:</strong> $<span id="spcMonthlyCost">—</span></div>
+    <div class="spc-sub-total">Est. yearly cost: $<span id="spcYearlyCost">—</span></div>
+    <div class="ipm-foot">
+      <span>24/7 uptime assumed (730 hrs/mo)</span>
+      <button id="spcPrint" class="ipm-btn">Print Summary</button>
+    </div>
+    <p class="ipm-note">Estimates only. Actual draw varies with workload, ambient temperature, and hardware age. Always verify with a power meter or PSU monitoring.</p>
+  </div>
+</div>
+
+<script>
+(function () {
+  const el = (id) => document.getElementById(id);
+  const num = (id) => parseFloat(el(id)?.value || '0') || 0;
+  const sel = (id) => el(id)?.value || '0';
+  const fmt = (n) => isNaN(n) ? '—' : n.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  const fmtInt = (n) => isNaN(n) ? '—' : Math.round(n).toLocaleString();
+
+  function recalc() {
+    // Component draw per server
+    const cpuW   = num('spcCpuCount') * num('spcCpuTdp');
+    const ramW   = num('spcDimmCount') * num('spcDimmWatts');
+    const hddW   = num('spcHddCount') * num('spcHddWatts');
+    const ssdW   = num('spcSsdCount') * num('spcSsdWatts');
+    const gpuW   = num('spcGpuCount') * num('spcGpuTdp');
+    const fanW   = num('spcFanWatts');
+    const moboW  = num('spcMoboWatts');
+    const otherW = num('spcOtherWatts');
+
+    const compPerServer = cpuW + ramW + hddW + ssdW + gpuW + fanW + moboW + otherW;
+
+    // PSU efficiency
+    const psuEff = parseFloat(sel('spcPsuEff')) || 0.92;
+    const wallPerServer = compPerServer / psuEff;
+
+    // Facility (PUE)
+    const pue = num('spcPue') || 1.58;
+    const facPerServer = wallPerServer * pue;
+
+    // Fleet
+    const servers = Math.max(1, Math.round(num('spcNumServers')));
+    const totalIT = wallPerServer * servers;
+    const totalFac = facPerServer * servers;
+
+    // Redundancy
+    const redundancy = parseFloat(sel('spcRedundancy')) || 1;
+    const provisioned = totalFac * redundancy;
+
+    // Energy (24/7)
+    const hoursMonth = 730;
+    const monthKwh = (totalFac * hoursMonth) / 1000;
+    const yearKwh = monthKwh * 12;
+
+    // Cost
+    const costKwh = num('spcCostKwh') || 0.12;
+    const monthlyCost = monthKwh * costKwh;
+    const yearlyCost = yearKwh * costKwh;
+
+    // Render
+    el('spcCompWatts').textContent   = fmtInt(compPerServer);
+    el('spcWallWatts').textContent   = fmtInt(wallPerServer);
+    el('spcFacWatts').textContent    = fmtInt(facPerServer);
+    el('spcTotalIT').textContent     = fmtInt(totalIT);
+    el('spcTotalFac').textContent    = fmtInt(totalFac);
+    el('spcProvision').textContent   = fmtInt(provisioned);
+    el('spcMonthKwh').textContent    = fmt(monthKwh);
+    el('spcYearKwh').textContent     = fmt(yearKwh);
+    el('spcMonthlyCost').textContent = fmt(monthlyCost);
+    el('spcYearlyCost').textContent  = fmt(yearlyCost);
+  }
+
+  function printSummary() {
+    const lines = [
+      'Server Power Estimate — iPaul Media',
+      '====================================',
+      'Servers: ' + (num('spcNumServers') || 1),
+      'Type: ' + sel('spcServerType'),
+      '',
+      'Per-Server Component Draw: ' + el('spcCompWatts').textContent + ' W',
+      'Per-Server Wall Draw:      ' + el('spcWallWatts').textContent + ' W',
+      'Per-Server Facility Draw:  ' + el('spcFacWatts').textContent + ' W',
+      '',
+      'Total IT Load:       ' + el('spcTotalIT').textContent + ' W',
+      'Total Facility Load: ' + el('spcTotalFac').textContent + ' W',
+      'Provisioned (redun): ' + el('spcProvision').textContent + ' W',
+      '',
+      'Monthly Energy: ' + el('spcMonthKwh').textContent + ' kWh',
+      'Yearly Energy:  ' + el('spcYearKwh').textContent + ' kWh',
+      '',
+      'Est. Monthly Cost: $' + el('spcMonthlyCost').textContent,
+      'Est. Yearly Cost:  $' + el('spcYearlyCost').textContent,
+      '',
+      'Generated at ipaul.us/server-power-calculator'
+    ];
+    const w = window.open('', '_blank');
+    w.document.open();
+    w.document.write('<html><head><title>Server Power Summary</title></head><body><pre>' + lines.join('\n') + '</pre><script>window.print()<\/script></body></html>');
+    w.document.close();
+  }
+
+  // Bind all inputs
+  const ids = [
+    'spcServerType','spcNumServers','spcCpuCount','spcCpuTdp',
+    'spcDimmCount','spcDimmWatts','spcHddCount','spcHddWatts',
+    'spcSsdCount','spcSsdWatts','spcGpuCount','spcGpuTdp',
+    'spcFanWatts','spcMoboWatts','spcOtherWatts',
+    'spcPsuEff','spcPue','spcRedundancy','spcCostKwh'
+  ];
+  ids.forEach(function (id) {
+    var e = el(id);
+    if (e) { e.addEventListener('input', recalc); e.addEventListener('change', recalc); }
+  });
+  el('spcPrint').addEventListener('click', printSummary);
+  recalc();
+})();
+</script>
+
+<style>
+  /* ── Server Power Calculator skin (matches iPaul benefits-calculator) ── */
+  #server-power-calc.ipm-benefits-card {
+    border: 1px solid rgba(123,30,63,.4);
+    border-radius: 14px;
+    padding: 1.25rem;
+    background: linear-gradient(180deg, rgba(123,30,63,.05), rgba(0,0,0,.02));
+    box-shadow: 0 4px 16px rgba(0,0,0,.06);
+    max-width: 980px;
+  }
+  #server-power-calc .ipm-title {
+    color: #D4AF37;
+    margin: 0 0 .75rem;
+  }
+
+  /* Grid helpers */
+  #server-power-calc .spc-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: .75rem;
+  }
+  @media (min-width:640px) {
+    #server-power-calc .spc-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (min-width:900px) {
+    #server-power-calc .spc-grid { grid-template-columns: repeat(4,1fr); }
+    #server-power-calc .spc-grid.two-col { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* Fieldsets */
+  #server-power-calc .spc-section {
+    border: 1px solid rgba(123,30,63,.2);
+    border-radius: 10px;
+    padding: .75rem 1rem;
+    margin: .75rem 0;
+  }
+  #server-power-calc .spc-section legend {
+    color: #7B1E3F;
+    font-weight: 700;
+    padding: 0 .4rem;
+    font-size: .95rem;
+  }
+
+  /* Fields */
+  #server-power-calc .ipm-field label {
+    font-weight: 700;
+    display: block;
+    margin-bottom: .2rem;
+    font-size: .9rem;
+  }
+  #server-power-calc .ipm-field small {
+    display: block;
+    opacity: .75;
+    font-size: .8rem;
+    margin-top: .15rem;
+  }
+  #server-power-calc .ipm-num {
+    width: 100%;
+    max-width: 10rem;
+    padding: .4rem .5rem;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 8px;
+    font-size: .95rem;
+  }
+  #server-power-calc .spc-select {
+    width: 100%;
+    max-width: 14rem;
+    padding: .4rem .5rem;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 8px;
+    font-size: .95rem;
+    background: #fff;
+  }
+
+  /* Details / advanced toggles */
+  #server-power-calc .ipm-adv {
+    margin: .5rem 0;
+  }
+  #server-power-calc .ipm-adv summary {
+    cursor: pointer;
+    color: #7B1E3F;
+    font-weight: 700;
+  }
+
+  /* Results panel */
+  #server-power-calc .ipm-results {
+    margin-top: 1rem;
+    background: rgba(0,0,0,.03);
+    border: 1px dashed rgba(0,0,0,.15);
+    border-radius: 12px;
+    padding: .75rem 1rem;
+    line-height: 1.7;
+  }
+  #server-power-calc .spc-result-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: .25rem;
+  }
+  @media (min-width:640px) {
+    #server-power-calc .spc-result-grid { grid-template-columns: 1fr 1fr 1fr; }
+  }
+  #server-power-calc .spc-result-item {
+    display: flex;
+    flex-direction: column;
+  }
+  #server-power-calc .spc-label {
+    font-size: .82rem;
+    opacity: .8;
+  }
+  #server-power-calc .spc-value {
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+  #server-power-calc .ipm-total {
+    font-size: 1.25rem;
+    color: #7B1E3F;
+    font-weight: 800;
+  }
+  #server-power-calc .spc-sub-total {
+    font-size: 1.05rem;
+    color: #7B1E3F;
+    font-weight: 600;
+    opacity: .85;
+  }
+  #server-power-calc .ipm-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .75rem;
+    margin-top: .5rem;
+    font-size: .85rem;
+    opacity: .85;
+  }
+  #server-power-calc .ipm-btn {
+    background: #7B1E3F;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: .45rem 1rem;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: .9rem;
+    transition: background .2s;
+  }
+  #server-power-calc .ipm-btn:hover { background: #5e1730; }
+  #server-power-calc .ipm-note {
+    font-size: .85rem;
+    opacity: .85;
+    margin: .5rem 0 0;
+  }
+  #server-power-calc hr {
+    border: none;
+    border-top: 1px dashed rgba(0,0,0,.12);
+    margin: .5rem 0;
+  }
+</style>
