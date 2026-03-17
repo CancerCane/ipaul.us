@@ -34,16 +34,7 @@ title: Home
 </section>
 
 <style>
-  /* Video Background Hero — override styles.css background-image */
-  .hero-section {
-    position: relative !important;
-    overflow: hidden !important;
-    background-image: none !important;
-    background-attachment: unset !important;
-    background-blend-mode: unset !important;
-    background-color: #0a0a0a !important;
-  }
-
+  /* Video background elements */
   .video-bg-wrapper {
     position: absolute;
     top: 0;
@@ -81,20 +72,16 @@ title: Home
     );
   }
 
-  .hero-container {
-    position: relative;
-    z-index: 3;
-  }
-
-  /* Fallback for mobile / reduced-motion */
-  @media (prefers-reduced-motion: reduce) {
-    .hero-video {
+  /* Hide video on mobile — bgblue01 fallback from styles.css kicks in */
+  @media (max-width: 768px) {
+    .video-bg-wrapper {
       display: none;
     }
-    .hero-section {
-      background-image: url('/assets/img/theflag.png') !important;
-      background-size: cover !important;
-      background-position: center !important;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .video-bg-wrapper {
+      display: none;
     }
   }
 </style>
