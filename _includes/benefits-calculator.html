@@ -1,6 +1,6 @@
 <!-- _includes/benefits-calculator.html -->
 <div id="benefits-calculator" class="ipm-benefits-card">
-  <h2 class="ipm-title">VA Benefits Calculator (2025)</h2>
+  <h2 class="ipm-title">VA Benefits Calculator (2026)</h2>
 
   <div class="ipm-grid">
     <div class="ipm-field">
@@ -72,7 +72,7 @@
     <hr />
     <div class="ipm-total"><strong>Total monthly (est.):</strong> $<span id="totalOut">—</span></div>
     <div class="ipm-foot">
-      <span>Rates year: 2025 (effective 2024‑12‑01)</span>
+      <span>Rates year: 2026 (effective 2025‑12‑01) — 2.8% COLA</span>
       <button id="printSummary" class="ipm-btn">Print Summary</button>
     </div>
     <p class="ipm-note">Quick estimator for standard VA compensation. Advanced toggles: Bilateral factor (manual pairs).
@@ -80,10 +80,9 @@
   </div>
 
   <!-- Preferred: load from _data -->
-  <script type="application/json" id="va-rates-2025">{{ site.data.va_rates_2025 | jsonify }}</script>
+  <script type="application/json" id="va-rates-2026">{{ site.data.va_rates_2026 | jsonify }}</script>
   <!-- Fallback inline JSON if data missing -->
-  <script type="application/json"
-    id="va-rates-inline-default">{"meta": {"effective_date": "2024-12-01", "year": 2025, "source": "https://www.va.gov/disability/compensation-rates/veteran-rates/"}, "ten_twenty": {"10": 175.51, "20": 346.95}, "added_amounts": {"30": {"child_u18": 31.0, "schoolchild_18_24": 102.0, "spouse_aa": 58.0}, "40": {"child_u18": 42.0, "schoolchild_18_24": 137.0, "spouse_aa": 78.0}, "50": {"child_u18": 53.0, "schoolchild_18_24": 171.0, "spouse_aa": 98.0}, "60": {"child_u18": 63.0, "schoolchild_18_24": 205.0, "spouse_aa": 117.0}, "70": {"child_u18": 74.0, "schoolchild_18_24": 239.0, "spouse_aa": 137.0}, "80": {"child_u18": 84.0, "schoolchild_18_24": 274.0, "spouse_aa": 157.0}, "90": {"child_u18": 95.0, "schoolchild_18_24": 308.0, "spouse_aa": 176.0}, "100": {"child_u18": 106.14, "schoolchild_18_24": 342.85, "spouse_aa": 195.92}}, "no_children": {"veteran_alone": {"30": 537.42, "40": 774.16, "50": 1102.04, "60": 1395.93, "70": 1759.19, "80": 2044.89, "90": 2297.96, "100": 3831.3}, "spouse": {"30": 601.42, "40": 859.16, "50": 1208.04, "60": 1523.93, "70": 1908.19, "80": 2214.89, "90": 2489.96, "100": 4044.91}, "spouse_one_parent": {"30": 652.42, "40": 927.16, "50": 1293.04, "60": 1625.93, "70": 2028.19, "80": 2351.89, "90": 2643.96, "100": 4216.35}, "spouse_two_parents": {"30": 703.42, "40": 995.16, "50": 1378.04, "60": 1727.93, "70": 2148.19, "80": 2488.89, "90": 2797.96, "100": 4387.79}, "one_parent": {"30": 588.42, "40": 842.16, "50": 1187.04, "60": 1497.93, "70": 1879.19, "80": 2181.89, "90": 2451.96, "100": 4002.74}, "two_parents": {"30": 639.42, "40": 910.16, "50": 1272.04, "60": 1599.93, "70": 1999.19, "80": 2318.89, "90": 2605.96, "100": 4174.18}}, "with_children": {"child_only": {"30": 579.42, "40": 831.16, "50": 1173.04, "60": 1480.93, "70": 1858.19, "80": 2158.89, "90": 2425.96, "100": 3974.15}, "spouse_child": {"30": 648.42, "40": 922.16, "50": 1287.04, "60": 1617.93, "70": 2018.19, "80": 2340.89, "90": 2630.96, "100": 4201.35}, "spouse_one_parent_child": {"30": 699.42, "40": 990.16, "50": 1372.04, "60": 1719.93, "70": 2138.19, "80": 2477.89, "90": 2784.96, "100": 4372.79}, "spouse_two_parents_child": {"30": 750.42, "40": 1058.16, "50": 1457.04, "60": 1821.93, "70": 2258.19, "80": 2614.89, "90": 2938.96, "100": 4544.23}, "one_parent_child": {"30": 630.42, "40": 899.16, "50": 1258.04, "60": 1582.93, "70": 1978.19, "80": 2295.89, "90": 2579.96, "100": 4145.59}, "two_parents_child": {"30": 681.42, "40": 967.16, "50": 1343.04, "60": 1684.93, "70": 2098.19, "80": 2432.89, "90": 2733.96, "100": 4317.03}}}</script>
+  <script type="application/json" id="va-rates-inline-default">{"meta":{"effective_date":"2025-12-01","year":2026,"cola_increase":"2.8%","source":"https://www.va.gov/disability/compensation-rates/veteran-rates/"},"ten_twenty":{"10":180.42,"20":356.66},"added_amounts":{"30":{"child_u18":32.0,"schoolchild_18_24":105.0,"spouse_aa":61.0},"40":{"child_u18":43.0,"schoolchild_18_24":140.0,"spouse_aa":81.0},"50":{"child_u18":54.0,"schoolchild_18_24":176.0,"spouse_aa":101.0},"60":{"child_u18":65.0,"schoolchild_18_24":211.0,"spouse_aa":121.0},"70":{"child_u18":76.0,"schoolchild_18_24":246.0,"spouse_aa":141.0},"80":{"child_u18":87.0,"schoolchild_18_24":281.0,"spouse_aa":161.0},"90":{"child_u18":98.0,"schoolchild_18_24":317.0,"spouse_aa":181.0},"100":{"child_u18":109.11,"schoolchild_18_24":352.45,"spouse_aa":201.41}},"no_children":{"veteran_alone":{"30":552.47,"40":795.84,"50":1132.90,"60":1435.02,"70":1808.45,"80":2102.15,"90":2362.30,"100":3938.58},"spouse":{"30":617.47,"40":882.84,"50":1241.90,"60":1566.02,"70":1961.45,"80":2277.15,"90":2559.30,"100":4158.17},"spouse_one_parent":{"30":669.47,"40":952.84,"50":1329.90,"60":1671.02,"70":2084.45,"80":2417.15,"90":2717.30,"100":4334.41},"spouse_two_parents":{"30":721.47,"40":1022.84,"50":1417.90,"60":1776.02,"70":2207.45,"80":2557.15,"90":2875.30,"100":4510.65},"one_parent":{"30":604.47,"40":865.84,"50":1220.90,"60":1540.02,"70":1931.45,"80":2242.15,"90":2520.30,"100":4114.82},"two_parents":{"30":656.47,"40":935.84,"50":1308.90,"60":1645.02,"70":2054.45,"80":2382.15,"90":2678.30,"100":4291.06}},"with_children":{"child_only":{"30":596.47,"40":853.84,"50":1205.90,"60":1523.02,"70":1910.45,"80":2219.15,"90":2494.30,"100":4085.43},"spouse_child":{"30":666.47,"40":947.84,"50":1322.90,"60":1663.02,"70":2074.45,"80":2406.15,"90":2704.30,"100":4318.99},"spouse_one_parent_child":{"30":718.47,"40":1017.84,"50":1410.90,"60":1768.02,"70":2197.45,"80":2546.15,"90":2862.30,"100":4495.23},"spouse_two_parents_child":{"30":770.47,"40":1087.84,"50":1498.90,"60":1873.02,"70":2320.45,"80":2686.15,"90":3020.30,"100":4671.47},"one_parent_child":{"30":648.47,"40":923.84,"50":1293.90,"60":1628.02,"70":2033.45,"80":2359.15,"90":2652.30,"100":4261.67},"two_parents_child":{"30":700.47,"40":993.84,"50":1381.90,"60":1733.02,"70":2156.45,"80":2499.15,"90":2810.30,"100":4437.91}}}</script>
 
   <script>
     (function () {
@@ -92,7 +91,7 @@
 
       function parseRates() {
         try {
-          const rawPref = document.getElementById('va-rates-2025')?.textContent?.trim();
+          const rawPref = document.getElementById('va-rates-2026')?.textContent?.trim();
           if (rawPref && rawPref !== 'null' && rawPref !== '') {
             return JSON.parse(rawPref);
           }
@@ -338,43 +337,49 @@
       color: white;
       border: none;
       border-radius: 10px;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+    }
 
+    #benefits-calculator .ipm-adv {
+      margin: 0.75rem 0;
+    }
 
-      #benefits-calculator .ipm-adv summary {
-        cursor: pointer;
-        color: #7B1E3F;
-        font-weight: 700;
-      }
+    #benefits-calculator .ipm-adv summary {
+      cursor: pointer;
+      color: #7B1E3F;
+      font-weight: 700;
+    }
 
+    #benefits-calculator .ipm-bilat-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: .5rem;
+      padding: .5rem 0;
+    }
+
+    @media (min-width:720px) {
       #benefits-calculator .ipm-bilat-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: .5rem;
-        padding: .5rem 0;
+        grid-template-columns: 1fr 1fr 1fr;
       }
+    }
 
-      @media (min-width:720px) {
-        #benefits-calculator .ipm-bilat-grid {
-          grid-template-columns: 1fr 1fr 1fr;
-        }
-      }
+    #benefits-calculator .ipm-bilat-grid .pair {
+      display: flex;
+      gap: .5rem;
+      align-items: center;
+    }
 
-      #benefits-calculator .ipm-bilat-grid .pair {
-        display: flex;
-        gap: .5rem;
-        align-items: center;
-      }
+    #benefits-calculator .ipm-bnote {
+      font-size: .85rem;
+      opacity: .8;
+      grid-column: 1 / -1;
+    }
 
-      #benefits-calculator .ipm-bnote {
-        font-size: .85rem;
-        opacity: .8;
-        grid-column: 1 / -1;
-      }
-
-      #benefits-calculator .ipm-note {
-        font-size: 0.85rem;
-        opacity: 0.85;
-        margin: 0.5rem 0 0;
-      }
+    #benefits-calculator .ipm-note {
+      font-size: 0.85rem;
+      opacity: 0.85;
+      margin: 0.5rem 0 0;
+    }
   </style>
 </div>

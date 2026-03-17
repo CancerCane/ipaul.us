@@ -5,9 +5,9 @@ subtitle: Free utilities for founders and veterans.
 ---
 <!-- markdownlint-disable -->
 
-### VA Benefits Calculator (NEW!)
+### VA Benefits Calculator (UPDATED!)
 
-**Calculate your 2025 VA disability compensation** with our comprehensive calculator. Features include:
+**Calculate your 2026 VA disability compensation** with our comprehensive calculator. Updated with the 2.8% COLA increase effective December 1, 2025. Features include:
 - Multiple disability ratings with VA math
 - Dependent calculations (spouse, children, parents)
 - Bilateral disability factors
@@ -16,7 +16,7 @@ subtitle: Free utilities for founders and veterans.
 
 **CTA:** [Calculate Your Benefits](/benefits-calculator/)
 
-### Server Power Calculator (NEW!)
+### Server Power Calculator
 
 **Estimate power draw and electricity costs** for your server infrastructure. Features include:
 - CPU, RAM, storage, and GPU power inputs

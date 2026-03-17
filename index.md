@@ -3,8 +3,14 @@ layout: default
 title: Home
 ---
 <!-- markdownlint-disable -->
-<!-- Hero Section -->
+<!-- Hero Section with Video Background -->
 <section id="hero" class="hero-section">
+  <div class="video-bg-wrapper">
+    <video autoplay muted loop playsinline id="heroVideo" class="hero-video">
+      <source src="/assets/videos/newPromovid.mp4" type="video/mp4">
+    </video>
+    <div class="video-overlay"></div>
+  </div>
   <div class="hero-container">
     <div class="hero-content">
       <div class="text-center text-white hero-text">
@@ -26,6 +32,70 @@ title: Home
     </div>
   </div>
 </section>
+
+<style>
+  /* Video Background Hero */
+  .hero-section {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .video-bg-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+
+  .hero-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.45) 0%,
+      rgba(123, 30, 63, 0.3) 50%,
+      rgba(0, 0, 0, 0.6) 100%
+    );
+  }
+
+  .hero-container {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* Fallback for mobile / reduced-motion */
+  @media (prefers-reduced-motion: reduce) {
+    .hero-video {
+      display: none;
+    }
+  }
+</style>
+
+<script>
+  // Cap video loop at 8 seconds
+  document.addEventListener('DOMContentLoaded', function () {
+    var vid = document.getElementById('heroVideo');
+    if (vid) {
+      vid.addEventListener('timeupdate', function () {
+        if (this.currentTime >= 8) {
+          this.currentTime = 0;
+          this.play();
+        }
+      });
+    }
+  });
+</script>
 
 <!-- Services Section -->
 <section id="services" class="services-section mask-custom-2">
