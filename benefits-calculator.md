@@ -1,7 +1,7 @@
 ---
 layout: page
 title: VA Benefits Calculator
-subtitle: Calculate your 2025 VA disability compensation with our easy-to-use tool
+subtitle: Calculate your 2026 VA disability compensation with our easy-to-use tool
 permalink: /benefits-calculator/
 ---
 
@@ -20,7 +20,7 @@ As a veteran-owned business, we understand the importance of knowing your VA ben
 
 ## Important Notes
 
-- This calculator uses the official 2025 VA rates (effective December 1, 2024)
+- This calculator uses the official 2026 VA rates (effective December 1, 2025) reflecting the 2.8% COLA increase
 - Results are estimates only - always verify with VA.gov
 - The calculator applies VA math to combine ratings
 - Combined ratings are rounded to the nearest 10%

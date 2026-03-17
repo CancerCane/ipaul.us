@@ -19,6 +19,8 @@ main:
     submenu:
       - title: Benefits Calculator
         url: /benefits-calculator/
+      - title: Server Power Calculator
+        url: /server-power-calculator/
   - title: Shop
     url: /shop/
   - title: About
