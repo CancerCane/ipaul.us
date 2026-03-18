@@ -7,7 +7,7 @@ title: Home
 <section id="hero" class="hero-section">
   <div class="video-bg-wrapper">
     <video autoplay muted loop playsinline id="heroVideo" class="hero-video">
-      <source src="/assets/videos/newPromovid.mp4" type="video/mp4">
+      <source src="{{ '/assets/videos/newPromovid.mp4' | relative_url }}" type="video/mp4">
     </video>
     <div class="video-overlay"></div>
   </div>
@@ -38,6 +38,13 @@ title: Home
   .hero-section {
     position: relative;
     overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Fallback gradient when video isn't showing */
+    background: radial-gradient(60% 120% at 50% -20%, rgba(123, 30, 63, .45), transparent),
+                linear-gradient(180deg, #0b0b0d, #1a1020);
   }
 
   .video-bg-wrapper {
@@ -74,7 +81,14 @@ title: Home
     z-index: 2;
   }
 
-  /* Fallback for mobile / reduced-motion */
+  /* Hide video on mobile — saves bandwidth, avoids autoplay issues */
+  @media (max-width: 768px) {
+    .hero-video {
+      display: none;
+    }
+  }
+
+  /* Respect reduced-motion preference */
   @media (prefers-reduced-motion: reduce) {
     .hero-video {
       display: none;
